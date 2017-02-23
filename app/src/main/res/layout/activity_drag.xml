@@ -4,14 +4,13 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/main_bg"
     tools:context="com.android.tao.xcustomview.MainActivity">
 
-    <com.android.tao.xcustomview.view.XStrokeRoundRectButton
-        android:id="@+id/xbtn_drag_activity"
+    <com.android.tao.xcustomview.view.DragView
+        android:id="@+id/dv_one"
         android:layout_width="@dimen/dp_100"
-        android:text="DragActivity"
-        android:layout_height="@dimen/dp_50" />
-
+        android:layout_height="@dimen/dp_100"
+        android:layout_centerInParent="true"
+        android:background="@color/colorAccent" />
 
 </RelativeLayout>
