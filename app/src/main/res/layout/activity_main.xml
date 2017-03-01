@@ -10,8 +10,29 @@
     <com.android.tao.xcustomview.view.XStrokeRoundRectButton
         android:id="@+id/xbtn_drag_activity"
         android:layout_width="@dimen/dp_100"
-        android:text="DragActivity"
-        android:layout_height="@dimen/dp_50" />
+        android:layout_height="@dimen/dp_50"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_50"
+        android:gravity="center"
+        android:text="DragActivity" />
+
+
+
+    <com.android.tao.xcustomview.view.XStrokeRoundRectButton
+        android:id="@+id/xbtn_plant_activity"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="@dimen/dp_50"
+        android:layout_below="@+id/xbtn_drag_activity"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_20"
+        android:gravity="center"
+        android:text="DragActivity" />
+
+
+
+
+
+
 
 
 </RelativeLayout>

@@ -20,6 +20,10 @@
         <activity
             android:name=".ui.ViewDragActivity"
             android:label="ViewDragActivity" />
+
+        <activity
+            android:name=".ui.ViewPlantActivity"
+            android:label="ViewPlantActivity" />
     </application>
 
 </manifest>
