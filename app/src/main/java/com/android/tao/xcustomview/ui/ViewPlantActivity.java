@@ -39,9 +39,8 @@ public class ViewPlantActivity extends AppCompatActivity {
         mLayPlantContainer.addCustomView(80, 500);
         mLayPlantContainer.addCustomView(570, 1200);
         mLayPlantContainer.addPlantView(50, 30);
-
-
     }
+
 
 
 }
