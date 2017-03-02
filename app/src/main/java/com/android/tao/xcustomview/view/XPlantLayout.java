@@ -204,16 +204,18 @@ public class XPlantLayout extends RelativeLayout {
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         super.onLayout(changed, l, t, r, b);
+
+        Log.w(TAG, "getWidth()==" + getWidth() + "getHeight()==" + getHeight());
     }
 
     @Override
     public void addOnLayoutChangeListener(OnLayoutChangeListener listener) {
         super.addOnLayoutChangeListener(listener);
-        Log.e(TAG,"addOnLayoutChangeListener");
-        Log.e(TAG,"left=="+getLeft());
-        Log.e(TAG,"top=="+getTop());
-        Log.e(TAG,"right=="+getRight());
-        Log.e(TAG,"bottom=="+getBottom());
+        Log.e(TAG, "addOnLayoutChangeListener");
+        Log.e(TAG, "left==" + getLeft());
+        Log.e(TAG, "top==" + getTop());
+        Log.e(TAG, "right==" + getRight());
+        Log.e(TAG, "bottom==" + getBottom());
     }
 
     /**
@@ -242,8 +244,12 @@ public class XPlantLayout extends RelativeLayout {
      * 开始移动的动画
      */
     public void startMoveAnim() {
-        ObjectAnimator obj = ObjectAnimator.ofFloat(mPlantView, "translationX",(mPointDes.x + mPlantHoleWidth / 2) - (mPointSource.x + mPlantWidth / 2));
-        ObjectAnimator obj2 = ObjectAnimator.ofFloat(mPlantView, "translationY",(mPointDes.y + mPlantHoleHeight / 2) - (mPointSource.y + mPlantHeight / 2));
+
+
+        mPlantView.layout(mCurrDesRect.left+mPlantHoleWidth / 2-mPlantWidth / 2,mCurrDesRect.top+mPlantHoleHeight / 2-mPlantHeight / 2,mCurrDesRect.left+mPlantHoleWidth / 2+mPlantWidth / 2,mCurrDesRect.top+mPlantHoleHeight / 2+mPlantHeight / 2);
+
+        /*ObjectAnimator obj = ObjectAnimator.ofFloat(mPlantView, "translationX", (mPointDes.x + mPlantHoleWidth / 2) - (mPointSource.x + mPlantWidth / 2));
+        ObjectAnimator obj2 = ObjectAnimator.ofFloat(mPlantView, "translationY", (mPointDes.y + mPlantHoleHeight / 2) - (mPointSource.y + mPlantHeight / 2));
         Log.e(TAG, "translationX ==" + ((mPointDes.x + mPlantHoleWidth / 2) - (mPointSource.x + mPlantWidth / 2)));
         Log.e(TAG, "translationY ==" + ((mPointDes.y + mPlantHoleHeight / 2) - (mPointSource.y + mPlantHeight / 2)));
         AnimatorSet set = new AnimatorSet();
@@ -254,8 +260,11 @@ public class XPlantLayout extends RelativeLayout {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                /*mLastX = 0;
-                mLastY = 0;*/
+                *//*mLastX = 0;
+                mLastY = 0;*//*
+
+//                mPlantView.layout(mCurrDesRect.left,mCurrDesRect.top,mCurrDesRect.right,mCurrDesRect.bottom);
+
             }
 
             @Override
@@ -268,7 +277,7 @@ public class XPlantLayout extends RelativeLayout {
         });
         set.playTogether(obj, obj2);
         set.setDuration(300);
-        set.start();
+        set.start();*/
     }
 
 }

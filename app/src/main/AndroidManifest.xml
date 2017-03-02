@@ -24,6 +24,10 @@
         <activity
             android:name=".ui.ViewPlantActivity"
             android:label="ViewPlantActivity" />
+
+        <activity
+            android:name=".ui.TestViewActivity"
+            android:label="TestViewActivity" />
     </application>
 
 </manifest>
