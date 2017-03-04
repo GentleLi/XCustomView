@@ -34,14 +34,9 @@ public class XPlantLayout extends RelativeLayout {
     private int mPlantHoleHeight = 230;
     private int mPlantWidth = 100;
     private int mPlantHeight = 100;
-    //实例化Scroller对象，在自定义View中，mContext可以在自定义View的构造方法中获取
-    private Scroller mScroller;
-    private int mLastX;
-    private int mLastY;
     Point mPointSource = new Point(0, 0);
     Point mPointDes = new Point(0, 0);
     private ArrayList<Rect> mPlantHoleRect = new ArrayList<>(4);
-    private ImageView mPlantView;
     private Rect mCurrDesRect = new Rect(0, 0, 0, 0);
 
 
@@ -63,7 +58,6 @@ public class XPlantLayout extends RelativeLayout {
      * init method
      */
     private void init() {
-        mScroller = new Scroller(mContext);
     }
 
     /**
@@ -88,18 +82,20 @@ public class XPlantLayout extends RelativeLayout {
      * 添加一株植物
      */
     public void addPlantView(int left, int top) {
-        mPlantView = new ImageView(mContext);
+        ImageView plant = new ImageView(mContext);
         LayoutParams params = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
         params.width = mPlantWidth;
         params.height = mPlantHeight;
         params.leftMargin = left + (mPlantHoleWidth - params.width) / 2;
         params.topMargin = top + (mPlantHoleHeight - params.height) / 2;
         mCurrDesRect.set(left, top, left + mPlantHoleWidth, top + mPlantHoleHeight);
-        mPlantView.setLayoutParams(params);
-//        mPlantView.setBackgroundColor(Color.GREEN);
-        mPlantView.setImageResource(R.mipmap.diamond);
-        addView(mPlantView);
-        mPlantView.setOnTouchListener(new View.OnTouchListener() {//宠物拖动效果
+        plant.setLayoutParams(params);
+        plant.setImageResource(R.mipmap.diamond);
+        addView(plant);
+        plant.setOnTouchListener(new View.OnTouchListener() {//宠物拖动效果
+            private int mLastX;
+            private int mLastY;
+
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
@@ -107,6 +103,7 @@ public class XPlantLayout extends RelativeLayout {
 //                    Log.e(TAG, "Touch:" + action);
                 switch (action) {
                     case MotionEvent.ACTION_DOWN:
+                        mCurrDesRect.set(v.getLeft()-(mPlantHoleWidth-mPlantWidth)/2,v.getTop()-(mPlantHoleHeight-mPlantHeight)/2,v.getRight()+(mPlantHoleWidth-mPlantWidth)/2,v.getBottom()+(mPlantHoleHeight-mPlantHeight)/2);//重新设置当前植物的初始位置，因为现在有两株植物，所以拖动那一株，初始位置就要设置为当前植物的位置
                         mLastX = (int) event.getRawX();
                         mLastY = (int) event.getRawY();
                         break;
@@ -147,6 +144,10 @@ public class XPlantLayout extends RelativeLayout {
                 return true;
             }
         });
+
+
+
+
     }
 
     /**
@@ -165,12 +166,7 @@ public class XPlantLayout extends RelativeLayout {
         mPointSource.y = top;
         for (int i = 0; i < mPlantHoleRect.size(); i++) {
             Rect rect = mPlantHoleRect.get(i);
-            if (rect.contains(left, top)) {
-                Log.e(TAG, "植物进入到目标移动位置 i==" + i);
-                Log.e(TAG, "rect.left ==" + rect.left);
-                Log.e(TAG, "rect.top ==" + rect.top);
-                Log.e(TAG, "rect.right ==" + rect.right);
-                Log.e(TAG, "rect.bottom ==" + rect.bottom);
+            if (rect.contains(left, top)||rect.contains(left,bottom)||rect.contains(right,top)||rect.contains(right,bottom)) {
                 mCurrDesRect.set(rect.left, rect.top, rect.right, rect.bottom);
                 break;
             }
@@ -178,8 +174,10 @@ public class XPlantLayout extends RelativeLayout {
 //        Log.e(TAG, "植物回到原来的位置");
         mPointDes.x = mCurrDesRect.left;
         mPointDes.y = mCurrDesRect.top;
-        startMoveAnim();
+        startMoveAnim(v);
     }
+
+
 
     /**
      * 获取一株植物洞穴
@@ -208,15 +206,6 @@ public class XPlantLayout extends RelativeLayout {
         Log.w(TAG, "getWidth()==" + getWidth() + "getHeight()==" + getHeight());
     }
 
-    @Override
-    public void addOnLayoutChangeListener(OnLayoutChangeListener listener) {
-        super.addOnLayoutChangeListener(listener);
-        Log.e(TAG, "addOnLayoutChangeListener");
-        Log.e(TAG, "left==" + getLeft());
-        Log.e(TAG, "top==" + getTop());
-        Log.e(TAG, "right==" + getRight());
-        Log.e(TAG, "bottom==" + getBottom());
-    }
 
     /**
      * 添加一个View集合
@@ -242,11 +231,11 @@ public class XPlantLayout extends RelativeLayout {
 
     /**
      * 开始移动的动画
+     * @param v
      */
-    public void startMoveAnim() {
+    public void startMoveAnim(View v) {
 
-
-        mPlantView.layout(mCurrDesRect.left+mPlantHoleWidth / 2-mPlantWidth / 2,mCurrDesRect.top+mPlantHoleHeight / 2-mPlantHeight / 2,mCurrDesRect.left+mPlantHoleWidth / 2+mPlantWidth / 2,mCurrDesRect.top+mPlantHoleHeight / 2+mPlantHeight / 2);
+        v.layout(mCurrDesRect.left+mPlantHoleWidth / 2-mPlantWidth / 2,mCurrDesRect.top+mPlantHoleHeight / 2-mPlantHeight / 2,mCurrDesRect.left+mPlantHoleWidth / 2+mPlantWidth / 2,mCurrDesRect.top+mPlantHoleHeight / 2+mPlantHeight / 2);
 
         /*ObjectAnimator obj = ObjectAnimator.ofFloat(mPlantView, "translationX", (mPointDes.x + mPlantHoleWidth / 2) - (mPointSource.x + mPlantWidth / 2));
         ObjectAnimator obj2 = ObjectAnimator.ofFloat(mPlantView, "translationY", (mPointDes.y + mPlantHoleHeight / 2) - (mPointSource.y + mPlantHeight / 2));
