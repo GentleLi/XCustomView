@@ -40,7 +40,7 @@ public class XPlantLayout extends RelativeLayout {
     private int mLastY;
     Point mPointSource = new Point(0, 0);
     Point mPointDes = new Point(0, 0);
-    private ArrayList<Rect> mPlantHoleRect = new ArrayList<>(4);
+    private ArrayList<View> mPlantHoleRect = new ArrayList<>(4);
     private ImageView mPlantView;
     private Rect mCurrDesRect = new Rect(0, 0, 0, 0);
 
@@ -80,8 +80,8 @@ public class XPlantLayout extends RelativeLayout {
         View image = getPlantHoleView(mPlantHoleWidth, mPlantHoleHeight);
         plantHole.addView(image);
         addView(plantHole);
-        Rect rect = new Rect(left, top, left + mPlantHoleWidth, top + mPlantHoleHeight);
-        mPlantHoleRect.add(rect);///**记录每一株植物的位置*/
+//        Rect rect = new Rect(left, top, left + mPlantHoleWidth, top + mPlantHoleHeight);
+        mPlantHoleRect.add(plantHole);///**记录每一株植物的位置*/
     }
 
     /**
@@ -155,22 +155,19 @@ public class XPlantLayout extends RelativeLayout {
      * @param v
      */
     private void computeDes(View v) {
-        int left = v.getLeft();
-        int top = v.getTop();
-        int right = v.getRight();
-        int bottom = v.getBottom();
+        int left = mPlantView.getLeft();
+        int top = mPlantView.getTop();
+        int right = mPlantView.getRight();
+        int bottom = mPlantView.getBottom();
         Log.e(TAG, "left==" + left);
         Log.e(TAG, "top==" + top);
         mPointSource.x = left;
         mPointSource.y = top;
         for (int i = 0; i < mPlantHoleRect.size(); i++) {
-            Rect rect = mPlantHoleRect.get(i);
+            View hole = mPlantHoleRect.get(i);
+            Rect rect = new Rect(hole.getLeft(), hole.getTop(), hole.getRight(), hole.getBottom());
+
             if (rect.contains(left, top)) {
-                Log.e(TAG, "植物进入到目标移动位置 i==" + i);
-                Log.e(TAG, "rect.left ==" + rect.left);
-                Log.e(TAG, "rect.top ==" + rect.top);
-                Log.e(TAG, "rect.right ==" + rect.right);
-                Log.e(TAG, "rect.bottom ==" + rect.bottom);
                 mCurrDesRect.set(rect.left, rect.top, rect.right, rect.bottom);
                 break;
             }
@@ -209,11 +206,11 @@ public class XPlantLayout extends RelativeLayout {
     @Override
     public void addOnLayoutChangeListener(OnLayoutChangeListener listener) {
         super.addOnLayoutChangeListener(listener);
-        Log.e(TAG,"addOnLayoutChangeListener");
-        Log.e(TAG,"left=="+getLeft());
-        Log.e(TAG,"top=="+getTop());
-        Log.e(TAG,"right=="+getRight());
-        Log.e(TAG,"bottom=="+getBottom());
+        Log.e(TAG, "addOnLayoutChangeListener");
+        Log.e(TAG, "left==" + getLeft());
+        Log.e(TAG, "top==" + getTop());
+        Log.e(TAG, "right==" + getRight());
+        Log.e(TAG, "bottom==" + getBottom());
     }
 
     /**
@@ -242,8 +239,8 @@ public class XPlantLayout extends RelativeLayout {
      * 开始移动的动画
      */
     public void startMoveAnim() {
-        ObjectAnimator obj = ObjectAnimator.ofFloat(mPlantView, "translationX",(mPointDes.x + mPlantHoleWidth / 2) - (mPointSource.x + mPlantWidth / 2));
-        ObjectAnimator obj2 = ObjectAnimator.ofFloat(mPlantView, "translationY",(mPointDes.y + mPlantHoleHeight / 2) - (mPointSource.y + mPlantHeight / 2));
+        ObjectAnimator obj = ObjectAnimator.ofFloat(mPlantView, "translationX", (mPointDes.x + mPlantHoleWidth / 2) - (mPointSource.x + mPlantWidth / 2));
+        ObjectAnimator obj2 = ObjectAnimator.ofFloat(mPlantView, "translationY", (mPointDes.y + mPlantHoleHeight / 2) - (mPointSource.y + mPlantHeight / 2));
         Log.e(TAG, "translationX ==" + ((mPointDes.x + mPlantHoleWidth / 2) - (mPointSource.x + mPlantWidth / 2)));
         Log.e(TAG, "translationY ==" + ((mPointDes.y + mPlantHoleHeight / 2) - (mPointSource.y + mPlantHeight / 2)));
         AnimatorSet set = new AnimatorSet();
