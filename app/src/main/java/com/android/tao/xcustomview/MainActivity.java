@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.android.tao.xcustomview.ui.TestViewActivity;
 import com.android.tao.xcustomview.ui.ViewDragActivity;
 import com.android.tao.xcustomview.ui.ViewPlantActivity;
 import com.android.tao.xcustomview.view.XStrokeRoundRectButton;
@@ -21,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     XStrokeRoundRectButton mXBtnDrag;
     @BindView(R.id.xbtn_plant_activity)
     XStrokeRoundRectButton mXBtnPlant;
+    @BindView(R.id.xbtn_view_test)
+    XStrokeRoundRectButton mXBtnViewTest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +53,12 @@ public class MainActivity extends AppCompatActivity {
         mXBtnPlant.setRadius(100);
         mXBtnPlant.setClickEnable(true);
 
+        mXBtnViewTest.setBgColor(Color.RED, Color.GRAY);
+        mXBtnViewTest.setBorder(2, Color.WHITE);
+        mXBtnViewTest.setRadius(100);
+        mXBtnViewTest.setClickEnable(true);
+
+
     }
 
     /**
@@ -73,6 +82,15 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.xbtn_plant_activity)
     public void onClickXBtnPlant(View view) {
         Intent intent = new Intent(MainActivity.this, ViewPlantActivity.class);
+        startActivity(intent);
+    }
+
+    /**
+     * 跳转到 拖动页面
+     */
+    @OnClick(R.id.xbtn_view_test)
+    public void onClickXBtnViewTest(View view) {
+        Intent intent = new Intent(MainActivity.this, TestViewActivity.class);
         startActivity(intent);
     }
 
