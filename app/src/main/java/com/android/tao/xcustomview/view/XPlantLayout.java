@@ -1,21 +1,17 @@
 package com.android.tao.xcustomview.view;
 
-import android.animation.Animator;
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.graphics.Point;
 import android.graphics.Rect;
-import android.nfc.Tag;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.Scroller;
 
 import com.android.tao.xcustomview.R;
+import com.android.tao.xcustomview.bean.PlantHole;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +24,6 @@ public class XPlantLayout extends RelativeLayout {
 
     private static final String TAG = XPlantLayout.class.getSimpleName();
     private Context mContext;
-    private List<View> mViewList = new ArrayList<>();
     private View mCurrFocusView;
     private int mPlantHoleWidth = 230;
     private int mPlantHoleHeight = 230;
@@ -36,8 +31,12 @@ public class XPlantLayout extends RelativeLayout {
     private int mPlantHeight = 100;
     Point mPointSource = new Point(0, 0);
     Point mPointDes = new Point(0, 0);
-    private ArrayList<Rect> mPlantHoleRect = new ArrayList<>(4);
-    private Rect mCurrDesRect = new Rect(0, 0, 0, 0);
+    private Rect mLTRect;
+    private Rect mLBTect;
+    private Rect mRTRect;
+    private Rect mRBRect;
+    private ArrayList<PlantHole> mPlantHoleList = new ArrayList<>(4);
+    private PlantHole mCurrDesRect;
 
 
     public XPlantLayout(Context context) {
@@ -58,37 +57,44 @@ public class XPlantLayout extends RelativeLayout {
      * init method
      */
     private void init() {
+        Rect rect=new Rect();
+        mCurrDesRect=new PlantHole();
+        mCurrDesRect.setRect(rect);
     }
 
     /**
      * 添加自定义的View
      */
-    public void addCustomView(int left, int top) {
+    public void addCustomView(int left, int top, int pos) {
         RelativeLayout.LayoutParams plantHoleLayoutParams = new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
         plantHoleLayoutParams.leftMargin = left;
         plantHoleLayoutParams.topMargin = top;
-        /*mLayPlantParams.width = 300;
-        mLayPlantParams.height = 300;*/
-        RelativeLayout plantHole = new RelativeLayout(mContext);
-        plantHole.setLayoutParams(plantHoleLayoutParams);
+        RelativeLayout plantHoleLayout = new RelativeLayout(mContext);
+        plantHoleLayout.setLayoutParams(plantHoleLayoutParams);
         View image = getPlantHoleView(mPlantHoleWidth, mPlantHoleHeight);
-        plantHole.addView(image);
-        addView(plantHole);
+        plantHoleLayout.addView(image);
+        addView(plantHoleLayout);
         Rect rect = new Rect(left, top, left + mPlantHoleWidth, top + mPlantHoleHeight);
-        mPlantHoleRect.add(rect);///**记录每一株植物的位置*/
+        PlantHole plantHole = new PlantHole();
+        plantHole.setRect(rect);
+        plantHole.setPos(pos);
+        mPlantHoleList.add(plantHole);///**记录每一株植物的位置*/
     }
 
     /**
      * 添加一株植物
      */
-    public void addPlantView(int left, int top) {
+    public void addPlantView(int pos) {
+        PlantHole hole = mPlantHoleList.get(pos);
+        hole.setFull(true);
         ImageView plant = new ImageView(mContext);
         LayoutParams params = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
         params.width = mPlantWidth;
         params.height = mPlantHeight;
-        params.leftMargin = left + (mPlantHoleWidth - params.width) / 2;
-        params.topMargin = top + (mPlantHoleHeight - params.height) / 2;
-        mCurrDesRect.set(left, top, left + mPlantHoleWidth, top + mPlantHoleHeight);
+        params.leftMargin = hole.getRect().left + (mPlantHoleWidth - params.width) / 2;
+        params.topMargin = hole.getRect().top + (mPlantHoleHeight - params.height) / 2;
+        mCurrDesRect.getRect().set(hole.getRect().left, hole.getRect().top, hole.getRect().right, hole.getRect().bottom);
+        mCurrDesRect.setPos(pos);
         plant.setLayoutParams(params);
         plant.setImageResource(R.mipmap.diamond);
         addView(plant);
@@ -103,7 +109,10 @@ public class XPlantLayout extends RelativeLayout {
 //                    Log.e(TAG, "Touch:" + action);
                 switch (action) {
                     case MotionEvent.ACTION_DOWN:
-                        mCurrDesRect.set(v.getLeft() - (mPlantHoleWidth - mPlantWidth) / 2, v.getTop() - (mPlantHoleHeight - mPlantHeight) / 2, v.getRight() + (mPlantHoleWidth - mPlantWidth) / 2, v.getBottom() + (mPlantHoleHeight - mPlantHeight) / 2);//重新设置当前植物的初始位置，因为现在有两株植物，所以拖动那一株，初始位置就要设置为当前植物的位置
+                        PlantHole hole = computeTouchHole(v.getLeft(), v.getTop(), v.getRight(), v.getBottom());
+                        mCurrDesRect.setPos(hole.getPos());
+                        mCurrDesRect.getRect().set(hole.getRect().left, hole.getRect().top, hole.getRect().right, hole.getRect().bottom);
+//                        mCurrDesRect.getRect().set(v.getLeft() - (mPlantHoleWidth - mPlantWidth) / 2, v.getTop() - (mPlantHoleHeight - mPlantHeight) / 2, v.getRight() + (mPlantHoleWidth - mPlantWidth) / 2, v.getBottom() + (mPlantHoleHeight - mPlantHeight) / 2);//重新设置当前植物的初始位置，因为现在有两株植物，所以拖动那一株，初始位置就要设置为当前植物的位置
                         mLastX = (int) event.getRawX();
                         mLastY = (int) event.getRawY();
                         break;
@@ -149,6 +158,25 @@ public class XPlantLayout extends RelativeLayout {
     }
 
     /**
+     * 计算当前触摸的位置属于哪一个树洞
+     *
+     * @param left
+     * @param top
+     * @param right
+     * @param bottom
+     */
+    private PlantHole computeTouchHole(int left, int top, int right, int bottom) {
+        for (int i = 0; i < mPlantHoleList.size(); i++) {
+            PlantHole hole = mPlantHoleList.get(i);
+            if (hole.getRect().contains(left, top, right, bottom)) {
+                hole.setFull(false);
+                return hole;
+            }
+        }
+        return null;
+    }
+
+    /**
      * 计算 植物移动的目标位置
      *
      * @param v
@@ -162,16 +190,18 @@ public class XPlantLayout extends RelativeLayout {
         Log.e(TAG, "top==" + top);
         mPointSource.x = left;
         mPointSource.y = top;
-        for (int i = 0; i < mPlantHoleRect.size(); i++) {
-            Rect rect = mPlantHoleRect.get(i);
-            if (rect.contains(left, top) || rect.contains(left, bottom) || rect.contains(right, top) || rect.contains(right, bottom)) {
-                mCurrDesRect.set(rect.left, rect.top, rect.right, rect.bottom);
+        for (int i = 0; i < mPlantHoleList.size(); i++) {
+            PlantHole hole = mPlantHoleList.get(i);
+            if (hole.isFull()) continue;
+            if (hole.getRect().contains(left, top) || hole.getRect().contains(left, bottom) || hole.getRect().contains(right, top) || hole.getRect().contains(right, bottom)) {
+                mCurrDesRect.getRect().set(hole.getRect().left, hole.getRect().top, hole.getRect().right, hole.getRect().bottom);
+                hole.setFull(true);//将当前树洞设置为满状态
                 break;
             }
         }
 //        Log.e(TAG, "植物回到原来的位置");
-        mPointDes.x = mCurrDesRect.left;
-        mPointDes.y = mCurrDesRect.top;
+        mPointDes.x = mCurrDesRect.getRect().left;
+        mPointDes.y = mCurrDesRect.getRect().top;
         startMoveAnim(v);
     }
 
@@ -233,7 +263,7 @@ public class XPlantLayout extends RelativeLayout {
      */
 
     public void startMoveAnim(View v) {
-        v.layout(mCurrDesRect.left + mPlantHoleWidth / 2 - mPlantWidth / 2, mCurrDesRect.top + mPlantHoleHeight / 2 - mPlantHeight / 2, mCurrDesRect.left + mPlantHoleWidth / 2 + mPlantWidth / 2, mCurrDesRect.top + mPlantHoleHeight / 2 + mPlantHeight / 2);
+        v.layout(mCurrDesRect.getRect().left + mPlantHoleWidth / 2 - mPlantWidth / 2, mCurrDesRect.getRect().top + mPlantHoleHeight / 2 - mPlantHeight / 2, mCurrDesRect.getRect().left + mPlantHoleWidth / 2 + mPlantWidth / 2, mCurrDesRect.getRect().top + mPlantHoleHeight / 2 + mPlantHeight / 2);
         /*ObjectAnimator obj = ObjectAnimator.ofFloat(mPlantView, "translationX", (mPointDes.x + mPlantHoleWidth / 2) - (mPointSource.x + mPlantWidth / 2));
         ObjectAnimator obj2 = ObjectAnimator.ofFloat(mPlantView, "translationY", (mPointDes.y + mPlantHoleHeight / 2) - (mPointSource.y + mPlantHeight / 2));
         Log.e(TAG, "translationX ==" + ((mPointDes.x + mPlantHoleWidth / 2) - (mPointSource.x + mPlantWidth / 2)));
