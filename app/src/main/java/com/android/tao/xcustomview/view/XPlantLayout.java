@@ -57,8 +57,8 @@ public class XPlantLayout extends RelativeLayout {
      * init method
      */
     private void init() {
-        Rect rect=new Rect();
-        mCurrDesRect=new PlantHole();
+        Rect rect = new Rect();
+        mCurrDesRect = new PlantHole();
         mCurrDesRect.setRect(rect);
     }
 
@@ -195,11 +195,12 @@ public class XPlantLayout extends RelativeLayout {
             if (hole.isFull()) continue;
             if (hole.getRect().contains(left, top) || hole.getRect().contains(left, bottom) || hole.getRect().contains(right, top) || hole.getRect().contains(right, bottom)) {
                 mCurrDesRect.getRect().set(hole.getRect().left, hole.getRect().top, hole.getRect().right, hole.getRect().bottom);
-                hole.setFull(true);//将当前树洞设置为满状态
+                mCurrDesRect.setPos(hole.getPos());
                 break;
             }
         }
 //        Log.e(TAG, "植物回到原来的位置");
+        mPlantHoleList.get(mCurrDesRect.getPos()).setFull(true);
         mPointDes.x = mCurrDesRect.getRect().left;
         mPointDes.y = mCurrDesRect.getRect().top;
         startMoveAnim(v);
