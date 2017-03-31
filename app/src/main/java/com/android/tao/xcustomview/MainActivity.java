@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.android.tao.xcustomview.ui.BezierActivity;
 import com.android.tao.xcustomview.ui.TestViewActivity;
 import com.android.tao.xcustomview.ui.ViewDragActivity;
 import com.android.tao.xcustomview.ui.ViewPlantActivity;
@@ -24,6 +25,10 @@ public class MainActivity extends AppCompatActivity {
     XStrokeRoundRectButton mXBtnPlant;
     @BindView(R.id.xbtn_view_test)
     XStrokeRoundRectButton mXBtnViewTest;
+    @BindView(R.id.xbtn_refresh_view)
+    XStrokeRoundRectButton mXBtnRefresh;
+    @BindView(R.id.xbtn_bezier_view)
+    XStrokeRoundRectButton mXBtnBezier;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +62,16 @@ public class MainActivity extends AppCompatActivity {
         mXBtnViewTest.setBorder(2, Color.WHITE);
         mXBtnViewTest.setRadius(100);
         mXBtnViewTest.setClickEnable(true);
+
+        mXBtnRefresh.setBgColor(Color.RED, Color.GRAY);
+        mXBtnRefresh.setBorder(2, Color.WHITE);
+        mXBtnRefresh.setRadius(100);
+        mXBtnRefresh.setClickEnable(true);
+
+        mXBtnRefresh.setBgColor(Color.RED, Color.GRAY);
+        mXBtnRefresh.setBorder(2, Color.WHITE);
+        mXBtnRefresh.setRadius(100);
+        mXBtnRefresh.setClickEnable(true);
 
 
     }
@@ -93,6 +108,26 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, TestViewActivity.class);
         startActivity(intent);
     }
+
+    /**
+     * 跳转到 拖动页面
+     */
+    @OnClick(R.id.xbtn_refresh_view)
+    public void onClickXBtnRefresh(View view) {
+        Intent intent = new Intent(MainActivity.this, TestViewActivity.class);
+        startActivity(intent);
+    }
+
+    /**
+     * 跳转到 BezierActivity
+     */
+    @OnClick(R.id.xbtn_bezier_view)
+    public void onClickXBtnBezier(View view) {
+        Intent intent = new Intent(MainActivity.this, BezierActivity.class);
+        startActivity(intent);
+    }
+
+
 
 
 }
