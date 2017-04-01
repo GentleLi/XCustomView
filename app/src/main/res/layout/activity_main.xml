@@ -57,5 +57,15 @@
         android:gravity="center"
         android:text="BezierActivity" />
 
+    <com.android.tao.xcustomview.view.XStrokeRoundRectButton
+        android:id="@+id/xbtn_bezier_wave_view"
+        android:layout_width="@dimen/dp_150"
+        android:layout_height="@dimen/dp_30"
+        android:layout_below="@+id/xbtn_bezier_view"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_20"
+        android:gravity="center"
+        android:text="BezierActivity" />
+
 
 </RelativeLayout>

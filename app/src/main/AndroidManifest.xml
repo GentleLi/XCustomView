@@ -36,6 +36,9 @@
         <activity
             android:name=".ui.BezierActivity"
             android:label="BezierActivity" />
+        <activity
+            android:name=".ui.BezierWaveActivity"
+            android:label="BezierWaveActivity" />
     </application>
 
 </manifest>

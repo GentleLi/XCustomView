@@ -8,10 +8,16 @@
     tools:context="com.android.tao.xcustomview.MainActivity">
 
 
-    <com.android.tao.xcustomview.view.TBezierView
-        android:id="@+id/bezier_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    <com.android.tao.xcustomview.view.MyBezierView
+        android:id="@+id/my_bezier_view"
+        android:layout_width="@dimen/dp_300"
+        android:layout_height="@dimen/dp_300"
+        android:layout_centerInParent="true" />
+
+    <com.android.tao.xcustomview.view.MaskView
+        android:layout_width="@dimen/dp_300"
+        android:layout_height="@dimen/dp_300"
+        android:layout_centerInParent="true" />
 
 
     <Button

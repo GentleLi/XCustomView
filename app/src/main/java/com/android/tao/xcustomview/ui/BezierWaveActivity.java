@@ -6,43 +6,37 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
 import com.android.tao.xcustomview.R;
-import com.android.tao.xcustomview.view.BezierView;
-import com.android.tao.xcustomview.view.TBezierView;
-import com.android.tao.xcustomview.view.XBezierView;
+import com.android.tao.xcustomview.view.MyBezierView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
- * Created by Jiantao on 2017/3/31.
+ * Created by Jiantao on 2017/4/1.
  */
 
-public class BezierActivity extends AppCompatActivity {
+public class BezierWaveActivity extends AppCompatActivity {
 
 
-    @BindView(R.id.bezier_view)
-    TBezierView mBezierView;
+    @BindView(R.id.my_bezier_view)
+    MyBezierView mBezierView;
     @BindView(R.id.btn_add_percent)
-    Button mBtnPercent;
+    Button mBtnAdd;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bezier);
+        setContentView(R.layout.activity_bezier_wave);
         ButterKnife.bind(this);
 
-
-
-
+        mBezierView.startAnim();
     }
 
 
     @OnClick(R.id.btn_add_percent)
-    public void onClickPercent() {
-        mBezierView.addPercent(0.01f);
-
-
+    public void OnClickAddPercent(){
+        mBezierView.addWaveHeight(1);
     }
 
 
