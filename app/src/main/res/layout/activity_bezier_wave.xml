@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bg"
+    tools:context="com.android.tao.xcustomview.MainActivity">
+
+
+    <com.android.tao.xcustomview.view.MyBezierView
+        android:id="@+id/my_bezier_view"
+        android:layout_width="@dimen/dp_300"
+        android:layout_height="@dimen/dp_300"
+        android:layout_centerInParent="true" />
+
+
+    <com.android.tao.xcustomview.view.MaskView
+        android:layout_width="@dimen/dp_300"
+        android:layout_height="@dimen/dp_300"
+        android:layout_centerInParent="true" />
+
+
+    <Button
+        android:id="@+id/btn_add_percent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="add" />
+
+
+</RelativeLayout>

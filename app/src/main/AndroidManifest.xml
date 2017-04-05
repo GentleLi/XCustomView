@@ -28,6 +28,17 @@
         <activity
             android:name=".ui.TestViewActivity"
             android:label="TestViewActivity" />
+
+        <activity
+            android:name=".ui.RefreshActivity"
+            android:label="RefreshActivity" />
+
+        <activity
+            android:name=".ui.BezierActivity"
+            android:label="BezierActivity" />
+        <activity
+            android:name=".ui.BezierWaveActivity"
+            android:label="BezierWaveActivity" />
     </application>
 
 </manifest>

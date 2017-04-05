@@ -9,8 +9,8 @@
 
     <com.android.tao.xcustomview.view.XStrokeRoundRectButton
         android:id="@+id/xbtn_drag_activity"
-        android:layout_width="@dimen/dp_100"
-        android:layout_height="@dimen/dp_50"
+        android:layout_width="@dimen/dp_150"
+        android:layout_height="@dimen/dp_30"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/dp_50"
         android:gravity="center"
@@ -19,8 +19,8 @@
 
     <com.android.tao.xcustomview.view.XStrokeRoundRectButton
         android:id="@+id/xbtn_plant_activity"
-        android:layout_width="@dimen/dp_100"
-        android:layout_height="@dimen/dp_50"
+        android:layout_width="@dimen/dp_150"
+        android:layout_height="@dimen/dp_30"
         android:layout_below="@+id/xbtn_drag_activity"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/dp_20"
@@ -29,13 +29,43 @@
 
     <com.android.tao.xcustomview.view.XStrokeRoundRectButton
         android:id="@+id/xbtn_view_test"
-        android:layout_width="@dimen/dp_100"
-        android:layout_height="@dimen/dp_50"
+        android:layout_width="@dimen/dp_150"
+        android:layout_height="@dimen/dp_30"
         android:layout_below="@+id/xbtn_plant_activity"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/dp_20"
         android:gravity="center"
         android:text="PlantActivity" />
+
+    <com.android.tao.xcustomview.view.XStrokeRoundRectButton
+        android:id="@+id/xbtn_refresh_view"
+        android:layout_width="@dimen/dp_150"
+        android:layout_height="@dimen/dp_30"
+        android:layout_below="@+id/xbtn_view_test"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_20"
+        android:gravity="center"
+        android:text="PlantActivity" />
+
+    <com.android.tao.xcustomview.view.XStrokeRoundRectButton
+        android:id="@+id/xbtn_bezier_view"
+        android:layout_width="@dimen/dp_150"
+        android:layout_height="@dimen/dp_30"
+        android:layout_below="@+id/xbtn_refresh_view"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_20"
+        android:gravity="center"
+        android:text="BezierActivity" />
+
+    <com.android.tao.xcustomview.view.XStrokeRoundRectButton
+        android:id="@+id/xbtn_bezier_wave_view"
+        android:layout_width="@dimen/dp_150"
+        android:layout_height="@dimen/dp_30"
+        android:layout_below="@+id/xbtn_bezier_view"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_20"
+        android:gravity="center"
+        android:text="BezierActivity" />
 
 
 </RelativeLayout>

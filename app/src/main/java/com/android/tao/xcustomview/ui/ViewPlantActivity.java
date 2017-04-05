@@ -34,12 +34,12 @@ public class ViewPlantActivity extends AppCompatActivity {
      * 初始化View
      */
     private void initView() {
-        mLayPlantContainer.addCustomView(50, 30);
-        mLayPlantContainer.addCustomView(450, 50);
-        mLayPlantContainer.addCustomView(80, 500);
-        mLayPlantContainer.addCustomView(570, 1200);
-        mLayPlantContainer.addPlantView(50, 30);
-        mLayPlantContainer.addPlantView(80,500);
+        mLayPlantContainer.addCustomView(50, 30,0);
+        mLayPlantContainer.addCustomView(450, 50,1);
+        mLayPlantContainer.addCustomView(80, 500,2);
+        mLayPlantContainer.addCustomView(570, 1200,3);
+        mLayPlantContainer.addPlantView(0);
+        mLayPlantContainer.addPlantView(1);
     }
 
 
