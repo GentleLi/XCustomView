@@ -3,6 +3,9 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="purple">#ac40ff</color>
+    <color name="yellow">#f9d862</color>
+    <color name="green">#c3f96c</color>
     <color name="text_color_one">#ed3d11</color>
     <color name="text_color_two">#ef1eda</color>
     <color name="main_bg">#607e9f</color>

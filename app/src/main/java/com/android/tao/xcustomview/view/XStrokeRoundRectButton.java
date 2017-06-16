@@ -1,12 +1,15 @@
 package com.android.tao.xcustomview.view;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
+import android.support.v7.widget.AppCompatButton;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
-import android.widget.Button;
 
+import com.android.tao.xcustomview.R;
 import com.android.tao.xcustomview.utils.LogUtils;
 
 /**
@@ -14,7 +17,8 @@ import com.android.tao.xcustomview.utils.LogUtils;
  * Created by 李建涛 on 2016/11/30.
  */
 
-public class XStrokeRoundRectButton extends Button {
+public class XStrokeRoundRectButton extends AppCompatButton {
+    private static final String TAG = XStrokeRoundRectButton.class.getSimpleName();
     private Context mContext;
     private int mEnableColor = Color.GRAY;//默认为灰色
     private int mDisableColor = Color.BLUE;//默认为蓝色
@@ -24,6 +28,11 @@ public class XStrokeRoundRectButton extends Button {
     private long mDownTime = 0;
     private int mBorderWidth=0;
     private int mBorderColor=Color.TRANSPARENT;
+    private static final float mDefaultRadius=2.0f;
+    private static final int mDefaultBorderColor=Color.TRANSPARENT;
+    private static final int mDefaultEnableColor=Color.BLUE;
+    private static final int mDefaultDisableColor=Color.LTGRAY;
+
 
     public XStrokeRoundRectButton(Context context) {
         this(context, null);
@@ -35,6 +44,37 @@ public class XStrokeRoundRectButton extends Button {
 
     public XStrokeRoundRectButton(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        mContext=context;
+        TypedArray typedArray=mContext.getTheme().obtainStyledAttributes(attrs, R.styleable.XStrokeRoundRectButton,defStyleAttr,0);
+        for (int i=0;i<typedArray.length();i++){
+            int attr=typedArray.getIndex(i);
+            switch(attr){
+                case R.styleable.XStrokeRoundRectButton_borderWidth:
+                    mBorderWidth= (int) typedArray.getDimension(attr,0f);
+                    Log.i(TAG,"mBorderWidth=="+mBorderWidth);
+                    break;
+                case R.styleable.XStrokeRoundRectButton_borderColor:
+                    mBorderColor=typedArray.getColor(attr,mDefaultBorderColor);
+                    Log.i(TAG,"mBorderColor=="+mBorderColor);
+                    break;
+                case R.styleable.XStrokeRoundRectButton_enableColor:
+                    mEnableColor=typedArray.getColor(attr,mDefaultEnableColor);
+                    Log.i(TAG,"mEnableColor=="+mEnableColor);
+                    break;
+                case R.styleable.XStrokeRoundRectButton_disableColor:
+                    mDisableColor=typedArray.getColor(attr,mDefaultDisableColor);
+                    Log.i(TAG,"mDisableColor=="+mDisableColor);
+                    break;
+                case R.styleable.XStrokeRoundRectButton_radius:
+                    mRadius=typedArray.getDimension(attr,mDefaultRadius);
+                    Log.i(TAG,"mRadius=="+mRadius);
+                    break;
+                case R.styleable.XStrokeRoundRectButton_clickEnable:
+                    mIsClickEnable=typedArray.getBoolean(attr,true);
+                    Log.i(TAG,"mIsClickEnable=="+mIsClickEnable);
+                    break;
+            }
+        }
         init();
         setClickable(true);
     }
@@ -75,11 +115,11 @@ public class XStrokeRoundRectButton extends Button {
      */
     public void setClickEnable(boolean enable) {
         if (enable) {
-            setFocusBacground();
+            setFocusBackground();
             setEnabled(true);
             this.mIsClickEnable = true;
         } else {
-            setNormalBacground();
+            setNormalBackground();
             setEnabled(false);
             this.mIsClickEnable = false;
         }
@@ -91,9 +131,9 @@ public class XStrokeRoundRectButton extends Button {
      */
     private void resetBg(){
         if (mIsClickEnable) {
-            setFocusBacground();
+            setFocusBackground();
         } else {
-            setNormalBacground();
+            setNormalBackground();
         }
         invalidate();
     }
@@ -114,7 +154,7 @@ public class XStrokeRoundRectButton extends Button {
         resetBg();
     }
 
-    private void setNormalBacground(){
+    private void setNormalBackground(){
         GradientDrawable background = new GradientDrawable();//创建drawable
         background.setColor(mDisableColor);
         background.setStroke(mBorderWidth,mBorderColor);
@@ -122,7 +162,7 @@ public class XStrokeRoundRectButton extends Button {
         setBackgroundDrawable(background);
     }
 
-    private void setFocusBacground(){
+    private void setFocusBackground(){
         GradientDrawable background = new GradientDrawable();//创建drawable
         background.setColor(mEnableColor);
         background.setCornerRadius(mRadius);

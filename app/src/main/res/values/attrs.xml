@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="CircleProgress">
-        <attr name="color1" format="reference|color"/>
-        <attr name="color2" format="reference|color"/>
-        <attr name="color3" format="reference|color"/>
+        <attr name="color1" format="reference|color" />
+        <attr name="color2" format="reference|color" />
+        <attr name="color3" format="reference|color" />
+    </declare-styleable>
+
+    <!--自定义属性值-->
+    <declare-styleable name="XStrokeRoundRectButton">
+        <attr name="radius" format="dimension|float" />
+        <attr name="borderWidth" format="dimension" />
+        <attr name="borderColor" format="color" />
+        <attr name="enableColor" format="color" />
+        <attr name="disableColor" format="color" />
+        <attr name="clickEnable" format="boolean" />
     </declare-styleable>
 </resources>
