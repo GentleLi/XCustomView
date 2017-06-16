@@ -8,6 +8,7 @@ import android.view.View;
 
 import com.android.tao.xcustomview.ui.BezierActivity;
 import com.android.tao.xcustomview.ui.BezierWaveActivity;
+import com.android.tao.xcustomview.ui.RefreshActivity;
 import com.android.tao.xcustomview.ui.TestViewActivity;
 import com.android.tao.xcustomview.ui.ViewDragActivity;
 import com.android.tao.xcustomview.ui.ViewPlantActivity;
@@ -122,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
      */
     @OnClick(R.id.xbtn_refresh_view)
     public void onClickXBtnRefresh(View view) {
-        Intent intent = new Intent(MainActivity.this, TestViewActivity.class);
+        Intent intent = new Intent(MainActivity.this, RefreshActivity.class);
         startActivity(intent);
     }
 

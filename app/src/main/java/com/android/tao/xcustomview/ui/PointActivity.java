@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.android.tao.xcustomview.R;
 
 /**
- * Created by administrato on 2017/6/16.
+ * Created by Jiantao on 2017/6/16.
  */
 
 public class PointActivity extends AppCompatActivity{

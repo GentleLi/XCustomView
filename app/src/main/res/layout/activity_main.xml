@@ -48,10 +48,9 @@
         app:disableColor="@color/yellow"
         app:borderColor="@color/green"
         app:borderWidth="@dimen/dp_2"
-
         android:layout_marginTop="@dimen/dp_20"
         android:gravity="center"
-        android:text="PlantActivity" />
+        android:text="RefreshViewActivity" />
 
     <com.android.tao.xcustomview.view.XStrokeRoundRectButton
         android:id="@+id/xbtn_bezier_view"
@@ -71,7 +70,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/dp_20"
         android:gravity="center"
-        android:text="BezierActivity" />
+        android:text="BezierWaveViewActivity" />
 
 
 </RelativeLayout>
