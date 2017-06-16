@@ -24,6 +24,7 @@ public class XPlantLayout extends RelativeLayout {
 
     private static final String TAG = XPlantLayout.class.getSimpleName();
     private Context mContext;
+
     private View mCurrFocusView;
     private int mPlantHoleWidth = 230;
     private int mPlantHoleHeight = 230;
@@ -123,22 +124,6 @@ public class XPlantLayout extends RelativeLayout {
                         int top = v.getTop() + dy;
                         int right = v.getRight() + dx;
                         int bottom = v.getBottom() + dy;
-//                            if (left < 0) {
-//                                left = 0;
-//                                right = left + v.getWidth();
-//                            }
-//                            if (right > mScreenWidth) {
-//                                right = mScreenWidth;
-//                                left = right - v.getWidth();
-//                            }
-//                            if (top < 0) {
-//                                top = 0;
-//                                bottom = top + v.getHeight();
-//                            }
-//                            if (bottom > (mScreenHeight - bottom)) {
-//                                bottom = (mScreenHeight - bottom);
-//                                top = bottom - v.getHeight();
-//                            }
                         v.layout(left, top, right, bottom);
                         mLastX = (int) event.getRawX();
                         mLastY = (int) event.getRawY();
@@ -234,6 +219,7 @@ public class XPlantLayout extends RelativeLayout {
     }
 
 
+
     /**
      * 添加一个View集合
      */
@@ -262,6 +248,7 @@ public class XPlantLayout extends RelativeLayout {
      *
      * @param v
      */
+
 
     public void startMoveAnim(View v) {
         v.layout(mCurrDesRect.getRect().left + mPlantHoleWidth / 2 - mPlantWidth / 2, mCurrDesRect.getRect().top + mPlantHoleHeight / 2 - mPlantHeight / 2, mCurrDesRect.getRect().left + mPlantHoleWidth / 2 + mPlantWidth / 2, mCurrDesRect.getRect().top + mPlantHoleHeight / 2 + mPlantHeight / 2);
