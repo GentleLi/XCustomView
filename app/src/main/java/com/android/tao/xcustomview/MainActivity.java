@@ -13,6 +13,7 @@ import com.android.tao.xcustomview.ui.TestViewActivity;
 import com.android.tao.xcustomview.ui.ViewDragActivity;
 import com.android.tao.xcustomview.ui.ViewPlantActivity;
 import com.android.tao.xcustomview.view.XStrokeRoundRectButton;
+import com.meituan.robust.patch.annotaion.Modify;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -50,19 +51,19 @@ public class MainActivity extends AppCompatActivity {
     private void initView() {
         setRoundRectButton();
     }
-
+    @Modify
     private void setRoundRectButton() {
         mXBtnDrag.setBgColor(Color.RED, Color.GRAY);
         mXBtnDrag.setBorder(2, Color.WHITE);
         mXBtnDrag.setRadius(100);
         mXBtnDrag.setClickEnable(true);
 
-        mXBtnPlant.setBgColor(Color.RED, Color.GRAY);
+        mXBtnPlant.setBgColor(Color.YELLOW, Color.GRAY);
         mXBtnPlant.setBorder(2, Color.WHITE);
         mXBtnPlant.setRadius(100);
         mXBtnPlant.setClickEnable(true);
 
-        mXBtnViewTest.setBgColor(Color.RED, Color.GRAY);
+        mXBtnViewTest.setBgColor(Color.YELLOW, Color.GRAY);
         mXBtnViewTest.setBorder(2, Color.WHITE);
         mXBtnViewTest.setRadius(100);
         mXBtnViewTest.setClickEnable(true);
