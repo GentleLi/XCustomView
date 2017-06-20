@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.android.tao.xcustomview.impl.PatchManipulateImp;
 import com.android.tao.xcustomview.storage.Storage;
@@ -54,8 +55,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
-
         initView();
         initListener();
         initData();
@@ -73,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
     private void initView() {
         setRoundRectButton();
     }
-    @Modify
+
     private void setRoundRectButton() {
         mXBtnDrag.setBgColor(Color.YELLOW, Color.GRAY);
         mXBtnDrag.setBorder(2, Color.WHITE);
@@ -109,8 +108,6 @@ public class MainActivity extends AppCompatActivity {
         mXBtnHotFix.setBorder(2, Color.WHITE);
         mXBtnHotFix.setRadius(100);
         mXBtnHotFix.setClickEnable(true);
-
-
     }
 
     /**
@@ -133,9 +130,11 @@ public class MainActivity extends AppCompatActivity {
      * 跳转到 拖动页面
      */
     @OnClick(R.id.xbtn_plant_activity)
+    @Modify
     public void onClickXBtnPlant(View view) {
-        Intent intent = new Intent(MainActivity.this, ViewPlantActivity.class);
-        startActivity(intent);
+//        Intent intent = new Intent(MainActivity.this, ViewPlantActivity.class);
+//        startActivity(intent);
+        Toast.makeText(getApplicationContext(),"HotFix已经修复了bug",Toast.LENGTH_LONG).show();
     }
 
     /**
@@ -145,6 +144,7 @@ public class MainActivity extends AppCompatActivity {
     public void onClickXBtnViewTest(View view) {
         Intent intent = new Intent(MainActivity.this, TestViewActivity.class);
         startActivity(intent);
+
     }
 
     /**

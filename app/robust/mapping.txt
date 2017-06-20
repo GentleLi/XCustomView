@@ -20880,6 +20880,7 @@ com.android.tao.xcustomview.impl.PatchManipulateImp -> com.android.tao.xcustomvi
     void <init>() -> <init>
     java.util.List fetchPatchList(android.content.Context) -> fetchPatchList
     boolean verifyPatch(android.content.Context,com.meituan.robust.Patch) -> verifyPatch
+    void copy(java.lang.String,java.lang.String) -> a
     boolean ensurePatchExist(com.meituan.robust.Patch) -> ensurePatchExist
     void <clinit>() -> <clinit>
 com.android.tao.xcustomview.storage.Storage -> com.android.tao.xcustomview.d.a:
