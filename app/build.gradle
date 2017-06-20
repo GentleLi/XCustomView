@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 //制作补丁时将这个打开，auto-patch-plugin紧跟着com.android.application
-apply plugin: 'auto-patch-plugin'
+//apply plugin: 'auto-patch-plugin'
 apply plugin: 'robust'
 
 def releaseTime() {

@@ -18809,66 +18809,96 @@ butterknife.internal.Utils$SupportV4 -> butterknife.internal.Utils$SupportV4:
     android.graphics.drawable.Drawable getTintedDrawable(android.content.res.Resources,android.content.res.Resources$Theme,int,int) -> getTintedDrawable
     void <clinit>() -> <clinit>
 com.android.tao.xcustomview.BaseApp -> com.android.tao.xcustomview.BaseApp:
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
     void <init>() -> <init>
     void onCreate() -> onCreate
     void onLowMemory() -> onLowMemory
     void onTerminate() -> onTerminate
 com.android.tao.xcustomview.MainActivity -> com.android.tao.xcustomview.MainActivity:
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> m
+    java.lang.String TAG -> n
     com.android.tao.xcustomview.view.XStrokeRoundRectButton mXBtnDrag -> mXBtnDrag
     com.android.tao.xcustomview.view.XStrokeRoundRectButton mXBtnPlant -> mXBtnPlant
     com.android.tao.xcustomview.view.XStrokeRoundRectButton mXBtnViewTest -> mXBtnViewTest
     com.android.tao.xcustomview.view.XStrokeRoundRectButton mXBtnRefresh -> mXBtnRefresh
     com.android.tao.xcustomview.view.XStrokeRoundRectButton mXBtnBezier -> mXBtnBezier
     com.android.tao.xcustomview.view.XStrokeRoundRectButton mXBtnBezierWave -> mXBtnBezierWave
+    com.android.tao.xcustomview.view.XStrokeRoundRectButton mXBtnHotFix -> mXBtnHotFix
     void <init>() -> <init>
     void onCreate(android.os.Bundle) -> onCreate
-    void initView() -> i
-    void setRoundRectButton() -> j
-    void initListener() -> k
+    void initData() -> i
+    void initView() -> j
+    void setRoundRectButton() -> k
+    void initListener() -> l
     void onClickXBtnDrag(android.view.View) -> onClickXBtnDrag
     void onClickXBtnPlant(android.view.View) -> onClickXBtnPlant
     void onClickXBtnViewTest(android.view.View) -> onClickXBtnViewTest
     void onClickXBtnRefresh(android.view.View) -> onClickXBtnRefresh
     void onClickXBtnBezier(android.view.View) -> onClickXBtnBezier
     void onClickXBtnBezierWave(android.view.View) -> onClickXBtnBezierWave
+    void onClickXBtnHotFix(android.view.View) -> onClickXBtnHotFix
+    void <clinit>() -> <clinit>
+com.android.tao.xcustomview.MainActivity$1 -> com.android.tao.xcustomview.MainActivity$1:
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
+    com.android.tao.xcustomview.MainActivity this$0 -> b
+    void <init>(com.android.tao.xcustomview.MainActivity) -> <init>
+    void onPatchListFetched(boolean,boolean,java.util.List) -> onPatchListFetched
+    void onPatchFetched(boolean,boolean,com.meituan.robust.Patch) -> onPatchFetched
+    void onPatchApplied(boolean,com.meituan.robust.Patch) -> onPatchApplied
+    void logNotify(java.lang.String,java.lang.String) -> logNotify
+    void exceptionNotify(java.lang.Throwable,java.lang.String) -> exceptionNotify
 com.android.tao.xcustomview.MainActivity_ViewBinding -> com.android.tao.xcustomview.MainActivity_ViewBinding:
-    com.android.tao.xcustomview.MainActivity target -> a
-    android.view.View view2131558520 -> b
-    android.view.View view2131558521 -> c
-    android.view.View view2131558522 -> d
-    android.view.View view2131558523 -> e
-    android.view.View view2131558524 -> f
-    android.view.View view2131558525 -> g
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
+    com.android.tao.xcustomview.MainActivity target -> b
+    android.view.View view2131558520 -> c
+    android.view.View view2131558521 -> d
+    android.view.View view2131558522 -> e
+    android.view.View view2131558523 -> f
+    android.view.View view2131558524 -> g
+    android.view.View view2131558525 -> h
+    android.view.View view2131558526 -> i
     void <init>(com.android.tao.xcustomview.MainActivity,android.view.View) -> <init>
     void unbind() -> unbind
 com.android.tao.xcustomview.MainActivity_ViewBinding$1 -> com.android.tao.xcustomview.MainActivity_ViewBinding$1:
-    com.android.tao.xcustomview.MainActivity val$target -> a
-    com.android.tao.xcustomview.MainActivity_ViewBinding this$0 -> b
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
+    com.android.tao.xcustomview.MainActivity val$target -> b
+    com.android.tao.xcustomview.MainActivity_ViewBinding this$0 -> c
     void <init>(com.android.tao.xcustomview.MainActivity_ViewBinding,com.android.tao.xcustomview.MainActivity) -> <init>
     void doClick(android.view.View) -> doClick
 com.android.tao.xcustomview.MainActivity_ViewBinding$2 -> com.android.tao.xcustomview.MainActivity_ViewBinding$2:
-    com.android.tao.xcustomview.MainActivity val$target -> a
-    com.android.tao.xcustomview.MainActivity_ViewBinding this$0 -> b
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
+    com.android.tao.xcustomview.MainActivity val$target -> b
+    com.android.tao.xcustomview.MainActivity_ViewBinding this$0 -> c
     void <init>(com.android.tao.xcustomview.MainActivity_ViewBinding,com.android.tao.xcustomview.MainActivity) -> <init>
     void doClick(android.view.View) -> doClick
 com.android.tao.xcustomview.MainActivity_ViewBinding$3 -> com.android.tao.xcustomview.MainActivity_ViewBinding$3:
-    com.android.tao.xcustomview.MainActivity val$target -> a
-    com.android.tao.xcustomview.MainActivity_ViewBinding this$0 -> b
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
+    com.android.tao.xcustomview.MainActivity val$target -> b
+    com.android.tao.xcustomview.MainActivity_ViewBinding this$0 -> c
     void <init>(com.android.tao.xcustomview.MainActivity_ViewBinding,com.android.tao.xcustomview.MainActivity) -> <init>
     void doClick(android.view.View) -> doClick
 com.android.tao.xcustomview.MainActivity_ViewBinding$4 -> com.android.tao.xcustomview.MainActivity_ViewBinding$4:
-    com.android.tao.xcustomview.MainActivity val$target -> a
-    com.android.tao.xcustomview.MainActivity_ViewBinding this$0 -> b
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
+    com.android.tao.xcustomview.MainActivity val$target -> b
+    com.android.tao.xcustomview.MainActivity_ViewBinding this$0 -> c
     void <init>(com.android.tao.xcustomview.MainActivity_ViewBinding,com.android.tao.xcustomview.MainActivity) -> <init>
     void doClick(android.view.View) -> doClick
 com.android.tao.xcustomview.MainActivity_ViewBinding$5 -> com.android.tao.xcustomview.MainActivity_ViewBinding$5:
-    com.android.tao.xcustomview.MainActivity val$target -> a
-    com.android.tao.xcustomview.MainActivity_ViewBinding this$0 -> b
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
+    com.android.tao.xcustomview.MainActivity val$target -> b
+    com.android.tao.xcustomview.MainActivity_ViewBinding this$0 -> c
     void <init>(com.android.tao.xcustomview.MainActivity_ViewBinding,com.android.tao.xcustomview.MainActivity) -> <init>
     void doClick(android.view.View) -> doClick
 com.android.tao.xcustomview.MainActivity_ViewBinding$6 -> com.android.tao.xcustomview.MainActivity_ViewBinding$6:
-    com.android.tao.xcustomview.MainActivity val$target -> a
-    com.android.tao.xcustomview.MainActivity_ViewBinding this$0 -> b
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
+    com.android.tao.xcustomview.MainActivity val$target -> b
+    com.android.tao.xcustomview.MainActivity_ViewBinding this$0 -> c
+    void <init>(com.android.tao.xcustomview.MainActivity_ViewBinding,com.android.tao.xcustomview.MainActivity) -> <init>
+    void doClick(android.view.View) -> doClick
+com.android.tao.xcustomview.MainActivity_ViewBinding$7 -> com.android.tao.xcustomview.MainActivity_ViewBinding$7:
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
+    com.android.tao.xcustomview.MainActivity val$target -> b
+    com.android.tao.xcustomview.MainActivity_ViewBinding this$0 -> c
     void <init>(com.android.tao.xcustomview.MainActivity_ViewBinding,com.android.tao.xcustomview.MainActivity) -> <init>
     void doClick(android.view.View) -> doClick
 com.android.tao.xcustomview.R -> com.android.tao.xcustomview.R:
@@ -19778,6 +19808,7 @@ com.android.tao.xcustomview.R$id -> com.android.tao.xcustomview.R$id:
     int xbtn_bezier_view -> xbtn_bezier_view
     int xbtn_bezier_wave_view -> xbtn_bezier_wave_view
     int xbtn_drag_activity -> xbtn_drag_activity
+    int xbtn_hot_fix -> xbtn_hot_fix
     int xbtn_plant_activity -> xbtn_plant_activity
     int xbtn_refresh_view -> xbtn_refresh_view
     int xbtn_view_test -> xbtn_view_test
@@ -20807,6 +20838,7 @@ com.android.tao.xcustomview.R$styleable -> com.android.tao.xcustomview.R$styleab
     void <init>() -> <init>
     void <clinit>() -> <clinit>
 com.android.tao.xcustomview.adapter.MyRecyclerAdapter -> com.android.tao.xcustomview.adapter.MyRecyclerAdapter:
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
     void <init>(android.view.LayoutInflater) -> <init>
     com.android.tao.xcustomview.adapter.MyRecyclerAdapter$StringViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> a
     void onBindViewHolder(com.android.tao.xcustomview.adapter.MyRecyclerAdapter$StringViewHolder,int) -> a
@@ -20816,13 +20848,15 @@ com.android.tao.xcustomview.adapter.MyRecyclerAdapter$StringViewHolder -> com.an
     android.widget.TextView mTxtItem -> mTxtItem
     void <init>(android.view.View) -> <init>
 com.android.tao.xcustomview.adapter.MyRecyclerAdapter$StringViewHolder_ViewBinding -> com.android.tao.xcustomview.adapter.MyRecyclerAdapter$StringViewHolder_ViewBinding:
-    com.android.tao.xcustomview.adapter.MyRecyclerAdapter$StringViewHolder target -> a
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
+    com.android.tao.xcustomview.adapter.MyRecyclerAdapter$StringViewHolder target -> b
     void <init>(com.android.tao.xcustomview.adapter.MyRecyclerAdapter$StringViewHolder,android.view.View) -> <init>
     void unbind() -> unbind
 com.android.tao.xcustomview.base.BaseRecyclerAdapter -> com.android.tao.xcustomview.a.a:
-    java.lang.String TAG -> a
-    java.util.List datas -> b
-    android.view.LayoutInflater mInflater -> c
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> b
+    java.lang.String TAG -> c
+    java.util.List datas -> d
+    android.view.LayoutInflater mInflater -> e
     void <init>(android.view.LayoutInflater) -> <init>
     void setData(java.util.List) -> a
     android.support.v7.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> b
@@ -20840,48 +20874,71 @@ com.android.tao.xcustomview.bean.PlantHole -> com.android.tao.xcustomview.b.a:
     void setFull(boolean) -> a
     int getPos() -> c
     void setPos(int) -> a
+com.android.tao.xcustomview.impl.PatchManipulateImp -> com.android.tao.xcustomview.c.a:
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
+    java.lang.String TAG -> b
+    void <init>() -> <init>
+    java.util.List fetchPatchList(android.content.Context) -> fetchPatchList
+    boolean verifyPatch(android.content.Context,com.meituan.robust.Patch) -> verifyPatch
+    boolean ensurePatchExist(com.meituan.robust.Patch) -> ensurePatchExist
+    void <clinit>() -> <clinit>
+com.android.tao.xcustomview.storage.Storage -> com.android.tao.xcustomview.d.a:
+    java.lang.String ROOT_DIR -> e
+    java.lang.String DOWNLOAD_DIR -> a
+    java.lang.String FILE_DIR -> b
+    java.lang.String CACHE_DIR -> c
+    java.lang.String HOT_FIX_DIR -> d
+    void <clinit>() -> <clinit>
 com.android.tao.xcustomview.ui.BezierActivity -> com.android.tao.xcustomview.ui.BezierActivity:
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> m
     com.android.tao.xcustomview.view.TBezierView mBezierView -> mBezierView
     android.widget.Button mBtnPercent -> mBtnPercent
     void <init>() -> <init>
     void onCreate(android.os.Bundle) -> onCreate
     void onClickPercent() -> onClickPercent
 com.android.tao.xcustomview.ui.BezierActivity_ViewBinding -> com.android.tao.xcustomview.ui.BezierActivity_ViewBinding:
-    com.android.tao.xcustomview.ui.BezierActivity target -> a
-    android.view.View view2131558517 -> b
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
+    com.android.tao.xcustomview.ui.BezierActivity target -> b
+    android.view.View view2131558517 -> c
     void <init>(com.android.tao.xcustomview.ui.BezierActivity,android.view.View) -> <init>
     void unbind() -> unbind
 com.android.tao.xcustomview.ui.BezierActivity_ViewBinding$1 -> com.android.tao.xcustomview.ui.BezierActivity_ViewBinding$1:
-    com.android.tao.xcustomview.ui.BezierActivity val$target -> a
-    com.android.tao.xcustomview.ui.BezierActivity_ViewBinding this$0 -> b
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
+    com.android.tao.xcustomview.ui.BezierActivity val$target -> b
+    com.android.tao.xcustomview.ui.BezierActivity_ViewBinding this$0 -> c
     void <init>(com.android.tao.xcustomview.ui.BezierActivity_ViewBinding,com.android.tao.xcustomview.ui.BezierActivity) -> <init>
     void doClick(android.view.View) -> doClick
 com.android.tao.xcustomview.ui.BezierWaveActivity -> com.android.tao.xcustomview.ui.BezierWaveActivity:
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> m
     com.android.tao.xcustomview.view.MyBezierView mBezierView -> mBezierView
     android.widget.Button mBtnAdd -> mBtnAdd
     void <init>() -> <init>
     void onCreate(android.os.Bundle) -> onCreate
     void OnClickAddPercent() -> OnClickAddPercent
 com.android.tao.xcustomview.ui.BezierWaveActivity_ViewBinding -> com.android.tao.xcustomview.ui.BezierWaveActivity_ViewBinding:
-    com.android.tao.xcustomview.ui.BezierWaveActivity target -> a
-    android.view.View view2131558517 -> b
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
+    com.android.tao.xcustomview.ui.BezierWaveActivity target -> b
+    android.view.View view2131558517 -> c
     void <init>(com.android.tao.xcustomview.ui.BezierWaveActivity,android.view.View) -> <init>
     void unbind() -> unbind
 com.android.tao.xcustomview.ui.BezierWaveActivity_ViewBinding$1 -> com.android.tao.xcustomview.ui.BezierWaveActivity_ViewBinding$1:
-    com.android.tao.xcustomview.ui.BezierWaveActivity val$target -> a
-    com.android.tao.xcustomview.ui.BezierWaveActivity_ViewBinding this$0 -> b
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
+    com.android.tao.xcustomview.ui.BezierWaveActivity val$target -> b
+    com.android.tao.xcustomview.ui.BezierWaveActivity_ViewBinding this$0 -> c
     void <init>(com.android.tao.xcustomview.ui.BezierWaveActivity_ViewBinding,com.android.tao.xcustomview.ui.BezierWaveActivity) -> <init>
     void doClick(android.view.View) -> doClick
 com.android.tao.xcustomview.ui.PointActivity -> com.android.tao.xcustomview.ui.PointActivity:
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> m
     void <init>() -> <init>
     void onCreate(android.os.Bundle,android.os.PersistableBundle) -> onCreate
 com.android.tao.xcustomview.ui.RefreshActivity -> com.android.tao.xcustomview.ui.RefreshActivity:
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> m
     android.support.v4.widget.SwipeRefreshLayout mSwipeRefreshLayout -> mSwipeRefreshLayout
     android.support.v7.widget.RecyclerView mRecyclerView -> mRecyclerView
-    android.support.v7.widget.LinearLayoutManager mLinearLayoutManager -> n
-    java.util.List mDataList -> o
-    com.android.tao.xcustomview.adapter.MyRecyclerAdapter mRecyclerAdapter -> p
-    android.os.Handler mHandler -> m
+    android.support.v7.widget.LinearLayoutManager mLinearLayoutManager -> o
+    java.util.List mDataList -> p
+    com.android.tao.xcustomview.adapter.MyRecyclerAdapter mRecyclerAdapter -> q
+    android.os.Handler mHandler -> n
     void <init>() -> <init>
     void onCreate(android.os.Bundle) -> onCreate
     void initData() -> j
@@ -20890,93 +20947,111 @@ com.android.tao.xcustomview.ui.RefreshActivity -> com.android.tao.xcustomview.ui
     void initListener() -> l
     com.android.tao.xcustomview.adapter.MyRecyclerAdapter access$000(com.android.tao.xcustomview.ui.RefreshActivity) -> a
 com.android.tao.xcustomview.ui.RefreshActivity$1 -> com.android.tao.xcustomview.ui.RefreshActivity$1:
-    com.android.tao.xcustomview.ui.RefreshActivity this$0 -> a
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
+    com.android.tao.xcustomview.ui.RefreshActivity this$0 -> b
     void <init>(com.android.tao.xcustomview.ui.RefreshActivity) -> <init>
     void onRefresh() -> a
 com.android.tao.xcustomview.ui.RefreshActivity$1$1 -> com.android.tao.xcustomview.ui.RefreshActivity$1$1:
-    com.android.tao.xcustomview.ui.RefreshActivity$1 this$1 -> a
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
+    com.android.tao.xcustomview.ui.RefreshActivity$1 this$1 -> b
     void <init>(com.android.tao.xcustomview.ui.RefreshActivity$1) -> <init>
     void run() -> run
 com.android.tao.xcustomview.ui.RefreshActivity$2 -> com.android.tao.xcustomview.ui.RefreshActivity$2:
-    com.android.tao.xcustomview.ui.RefreshActivity this$0 -> a
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
+    com.android.tao.xcustomview.ui.RefreshActivity this$0 -> b
     void <init>(com.android.tao.xcustomview.ui.RefreshActivity) -> <init>
     void handleMessage(android.os.Message) -> handleMessage
 com.android.tao.xcustomview.ui.RefreshActivity_ViewBinding -> com.android.tao.xcustomview.ui.RefreshActivity_ViewBinding:
-    com.android.tao.xcustomview.ui.RefreshActivity target -> a
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
+    com.android.tao.xcustomview.ui.RefreshActivity target -> b
     void <init>(com.android.tao.xcustomview.ui.RefreshActivity,android.view.View) -> <init>
     void unbind() -> unbind
 com.android.tao.xcustomview.ui.TestViewActivity -> com.android.tao.xcustomview.ui.TestViewActivity:
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> m
     android.widget.Button mBtnMove -> mBtnMove
     void <init>() -> <init>
     void onCreate(android.os.Bundle) -> onCreate
     void initView() -> i
     void onClickMove() -> onClickMove
 com.android.tao.xcustomview.ui.TestViewActivity_ViewBinding -> com.android.tao.xcustomview.ui.TestViewActivity_ViewBinding:
-    com.android.tao.xcustomview.ui.TestViewActivity target -> a
-    android.view.View view2131558529 -> b
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
+    com.android.tao.xcustomview.ui.TestViewActivity target -> b
+    android.view.View view2131558530 -> c
     void <init>(com.android.tao.xcustomview.ui.TestViewActivity,android.view.View) -> <init>
     void unbind() -> unbind
 com.android.tao.xcustomview.ui.TestViewActivity_ViewBinding$1 -> com.android.tao.xcustomview.ui.TestViewActivity_ViewBinding$1:
-    com.android.tao.xcustomview.ui.TestViewActivity val$target -> a
-    com.android.tao.xcustomview.ui.TestViewActivity_ViewBinding this$0 -> b
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
+    com.android.tao.xcustomview.ui.TestViewActivity val$target -> b
+    com.android.tao.xcustomview.ui.TestViewActivity_ViewBinding this$0 -> c
     void <init>(com.android.tao.xcustomview.ui.TestViewActivity_ViewBinding,com.android.tao.xcustomview.ui.TestViewActivity) -> <init>
     void doClick(android.view.View) -> doClick
 com.android.tao.xcustomview.ui.ViewDragActivity -> com.android.tao.xcustomview.ui.ViewDragActivity:
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> m
     void <init>() -> <init>
     void onCreate(android.os.Bundle) -> onCreate
 com.android.tao.xcustomview.ui.ViewPlantActivity -> com.android.tao.xcustomview.ui.ViewPlantActivity:
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> m
     com.android.tao.xcustomview.view.XPlantLayout mLayPlantContainer -> mLayPlantContainer
     void <init>() -> <init>
     void onCreate(android.os.Bundle) -> onCreate
     void initView() -> i
 com.android.tao.xcustomview.ui.ViewPlantActivity_ViewBinding -> com.android.tao.xcustomview.ui.ViewPlantActivity_ViewBinding:
-    com.android.tao.xcustomview.ui.ViewPlantActivity target -> a
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
+    com.android.tao.xcustomview.ui.ViewPlantActivity target -> b
     void <init>(com.android.tao.xcustomview.ui.ViewPlantActivity,android.view.View) -> <init>
     void unbind() -> unbind
-com.android.tao.xcustomview.utils.CloseUtils -> com.android.tao.xcustomview.c.a:
+com.android.tao.xcustomview.utils.CloseUtils -> com.android.tao.xcustomview.e.a:
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
     void closeIO(java.io.Closeable[]) -> a
-com.android.tao.xcustomview.utils.FileUtils -> com.android.tao.xcustomview.c.b:
+com.android.tao.xcustomview.utils.FileUtils -> com.android.tao.xcustomview.e.b:
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
     java.io.File getFileByPath(java.lang.String) -> a
     boolean createOrExistsDir(java.io.File) -> a
     boolean createOrExistsFile(java.lang.String) -> b
     boolean createOrExistsFile(java.io.File) -> b
-com.android.tao.xcustomview.utils.LogUtils -> com.android.tao.xcustomview.c.c:
-    boolean logSwitch -> a
-    boolean log2FileSwitch -> b
-    char logFilter -> c
-    java.lang.String tag -> d
-    java.lang.String dir -> e
+    boolean writeFileFromString(java.io.File,java.lang.String,boolean) -> a
+com.android.tao.xcustomview.utils.LogUtils -> com.android.tao.xcustomview.e.c:
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
+    boolean logSwitch -> b
+    boolean log2FileSwitch -> c
+    char logFilter -> d
+    java.lang.String tag -> e
+    java.lang.String dir -> f
     void i(java.lang.Object) -> a
     void i(java.lang.String,java.lang.Object) -> a
     void i(java.lang.String,java.lang.Object,java.lang.Throwable) -> a
     void log(java.lang.String,java.lang.String,java.lang.Throwable,char) -> a
     void log2File(char,java.lang.String,java.lang.String) -> a
     void <clinit>() -> <clinit>
-com.android.tao.xcustomview.utils.LogUtils$1 -> com.android.tao.xcustomview.c.c$1:
-    java.lang.String val$fullPath -> a
-    java.lang.String val$dateLogContent -> b
+com.android.tao.xcustomview.utils.LogUtils$1 -> com.android.tao.xcustomview.e.c$1:
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
+    java.lang.String val$fullPath -> b
+    java.lang.String val$dateLogContent -> c
     void <init>(java.lang.String,java.lang.String) -> <init>
     void run() -> run
-com.android.tao.xcustomview.utils.StringUtils -> com.android.tao.xcustomview.c.d:
+com.android.tao.xcustomview.utils.StringUtils -> com.android.tao.xcustomview.e.d:
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
     boolean isSpace(java.lang.String) -> a
-com.android.tao.xcustomview.utils.Utils -> com.android.tao.xcustomview.c.e:
-    android.content.Context context -> a
+com.android.tao.xcustomview.utils.Utils -> com.android.tao.xcustomview.e.e:
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
+    android.content.Context context -> b
     void init(android.content.Context) -> a
 com.android.tao.xcustomview.view.BezierView -> com.android.tao.xcustomview.view.BezierView:
-    java.lang.String TAG -> e
-    android.graphics.Paint mPaint -> f
-    android.graphics.Paint mPaint2 -> g
-    android.graphics.Path mPath -> h
-    int mViewWidth -> a
-    int mViewHeight -> b
-    int mWidth -> c
-    int mHeight -> d
-    float r -> i
-    float rArc -> j
-    float x -> k
-    float percent -> l
-    android.graphics.RectF rectF -> m
-    android.graphics.PointF mPointF -> n
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
+    java.lang.String TAG -> f
+    android.graphics.Paint mPaint -> g
+    android.graphics.Paint mPaint2 -> h
+    android.graphics.Path mPath -> i
+    int mViewWidth -> b
+    int mViewHeight -> c
+    int mWidth -> d
+    int mHeight -> e
+    float r -> j
+    float rArc -> k
+    float x -> l
+    float percent -> m
+    android.graphics.RectF rectF -> n
+    android.graphics.PointF mPointF -> o
     void <init>(android.content.Context) -> <init>
     void <init>(android.content.Context,android.util.AttributeSet) -> <init>
     void setPercent(float) -> setPercent
@@ -20985,19 +21060,20 @@ com.android.tao.xcustomview.view.BezierView -> com.android.tao.xcustomview.view.
     void textCenter(java.lang.String[],android.graphics.Paint,android.graphics.Canvas,android.graphics.PointF,android.graphics.Paint$Align) -> a
     void <clinit>() -> <clinit>
 com.android.tao.xcustomview.view.CircleProgress -> com.android.tao.xcustomview.view.CircleProgress:
-    int[] COLORS -> a
-    android.animation.TimeInterpolator mInterpolator -> b
-    double DEGREE -> c
-    android.graphics.Paint mPaint -> d
-    int mViewSize -> e
-    int mPointRadius -> f
-    long mStartTime -> g
-    long mPlayTime -> h
-    boolean mStartAnim -> i
-    android.graphics.Point mCenter -> j
-    float mRadiusFactor -> k
-    com.android.tao.xcustomview.view.CircleProgress$ArcPoint[] mArcPoint -> l
-    long mDuration -> m
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
+    int[] COLORS -> b
+    android.animation.TimeInterpolator mInterpolator -> c
+    double DEGREE -> d
+    android.graphics.Paint mPaint -> e
+    int mViewSize -> f
+    int mPointRadius -> g
+    long mStartTime -> h
+    long mPlayTime -> i
+    boolean mStartAnim -> j
+    android.graphics.Point mCenter -> k
+    float mRadiusFactor -> l
+    com.android.tao.xcustomview.view.CircleProgress$ArcPoint[] mArcPoint -> m
+    long mDuration -> n
     void <init>(android.content.Context) -> <init>
     void <init>(android.content.Context,android.util.AttributeSet) -> <init>
     void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
@@ -21018,11 +21094,12 @@ com.android.tao.xcustomview.view.CircleProgress$ArcPoint -> com.android.tao.xcus
     int color -> c
     void <init>(float,float,int) -> <init>
 com.android.tao.xcustomview.view.DragView -> com.android.tao.xcustomview.view.DragView:
-    android.content.Context mContext -> a
-    int mLastX -> b
-    int mLastY -> c
-    android.graphics.Paint mPaint -> d
-    android.graphics.RectF mRectF -> e
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
+    android.content.Context mContext -> b
+    int mLastX -> c
+    int mLastY -> d
+    android.graphics.Paint mPaint -> e
+    android.graphics.RectF mRectF -> f
     void <init>(android.content.Context) -> <init>
     void <init>(android.content.Context,android.util.AttributeSet) -> <init>
     void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
@@ -21036,16 +21113,17 @@ com.android.tao.xcustomview.view.EaseInOutCubicInterpolator -> com.android.tao.x
     void <init>() -> <init>
     float getInterpolation(float) -> getInterpolation
 com.android.tao.xcustomview.view.MaskView -> com.android.tao.xcustomview.view.MaskView:
-    java.lang.String TAG -> a
-    int mWidth -> b
-    int mHeight -> c
-    int mRealWidth -> d
-    int mRealHeight -> e
-    float mRadius -> f
-    android.graphics.Paint mCirclePaint -> g
-    android.graphics.Paint mMaskPaint -> h
-    android.graphics.Path mCirclePath -> i
-    android.graphics.Path mMaskPath -> j
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
+    java.lang.String TAG -> b
+    int mWidth -> c
+    int mHeight -> d
+    int mRealWidth -> e
+    int mRealHeight -> f
+    float mRadius -> g
+    android.graphics.Paint mCirclePaint -> h
+    android.graphics.Paint mMaskPaint -> i
+    android.graphics.Path mCirclePath -> j
+    android.graphics.Path mMaskPath -> k
     void <init>(android.content.Context) -> <init>
     void <init>(android.content.Context,android.util.AttributeSet) -> <init>
     void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
@@ -21054,22 +21132,23 @@ com.android.tao.xcustomview.view.MaskView -> com.android.tao.xcustomview.view.Ma
     void onDraw(android.graphics.Canvas) -> onDraw
     void <clinit>() -> <clinit>
 com.android.tao.xcustomview.view.MyBezierView -> com.android.tao.xcustomview.view.MyBezierView:
-    java.lang.String TAG -> a
-    int mViewWidth -> b
-    int mViewHeight -> c
-    int mWidth -> d
-    int mHeight -> e
-    float mRadius -> f
-    android.graphics.RectF mRectF -> g
-    android.graphics.Paint mWavePaint -> h
-    android.graphics.Paint mCirclePaint -> i
-    android.graphics.PointF mPointF -> j
-    android.graphics.Paint mTextPaint -> k
-    android.graphics.Path mWavePath -> l
-    android.graphics.Path mCirclePath -> m
-    int mItemWaveLength -> n
-    int dx -> o
-    int mWaveHeight -> p
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
+    java.lang.String TAG -> b
+    int mViewWidth -> c
+    int mViewHeight -> d
+    int mWidth -> e
+    int mHeight -> f
+    float mRadius -> g
+    android.graphics.RectF mRectF -> h
+    android.graphics.Paint mWavePaint -> i
+    android.graphics.Paint mCirclePaint -> j
+    android.graphics.PointF mPointF -> k
+    android.graphics.Paint mTextPaint -> l
+    android.graphics.Path mWavePath -> m
+    android.graphics.Path mCirclePath -> n
+    int mItemWaveLength -> o
+    int dx -> p
+    int mWaveHeight -> q
     void <init>(android.content.Context) -> <init>
     void <init>(android.content.Context,android.util.AttributeSet) -> <init>
     void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
@@ -21083,24 +21162,26 @@ com.android.tao.xcustomview.view.MyBezierView -> com.android.tao.xcustomview.vie
     int access$002(com.android.tao.xcustomview.view.MyBezierView,int) -> a
     void <clinit>() -> <clinit>
 com.android.tao.xcustomview.view.MyBezierView$1 -> com.android.tao.xcustomview.view.MyBezierView$1:
-    com.android.tao.xcustomview.view.MyBezierView this$0 -> a
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
+    com.android.tao.xcustomview.view.MyBezierView this$0 -> b
     void <init>(com.android.tao.xcustomview.view.MyBezierView) -> <init>
     void onAnimationUpdate(com.nineoldandroids.animation.ValueAnimator) -> onAnimationUpdate
 com.android.tao.xcustomview.view.TBezierView -> com.android.tao.xcustomview.view.TBezierView:
-    java.lang.String TAG -> e
-    android.graphics.Paint mPaint -> f
-    android.graphics.Paint mPaint2 -> g
-    android.graphics.Path mPath -> h
-    int mViewWidth -> a
-    int mViewHeight -> b
-    int mWidth -> c
-    int mHeight -> d
-    float r -> i
-    float rArc -> j
-    float x -> k
-    float mPercent -> l
-    android.graphics.RectF rectF -> m
-    android.graphics.PointF mPointF -> n
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
+    java.lang.String TAG -> f
+    android.graphics.Paint mPaint -> g
+    android.graphics.Paint mPaint2 -> h
+    android.graphics.Path mPath -> i
+    int mViewWidth -> b
+    int mViewHeight -> c
+    int mWidth -> d
+    int mHeight -> e
+    float r -> j
+    float rArc -> k
+    float x -> l
+    float mPercent -> m
+    android.graphics.RectF rectF -> n
+    android.graphics.PointF mPointF -> o
     void <init>(android.content.Context) -> <init>
     void <init>(android.content.Context,android.util.AttributeSet) -> <init>
     void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
@@ -21112,20 +21193,21 @@ com.android.tao.xcustomview.view.TBezierView -> com.android.tao.xcustomview.view
     void textCenter(java.lang.String[],android.graphics.Paint,android.graphics.Canvas,android.graphics.PointF,android.graphics.Paint$Align) -> a
     void <clinit>() -> <clinit>
 com.android.tao.xcustomview.view.XBezierView -> com.android.tao.xcustomview.view.XBezierView:
-    java.lang.String TAG -> e
-    android.graphics.Paint mPaint -> f
-    android.graphics.Paint mPaint2 -> g
-    android.graphics.Path mPath -> h
-    int mViewWidth -> a
-    int mViewHeight -> b
-    int mWidth -> c
-    int mHeight -> d
-    float r -> i
-    float rArc -> j
-    float x -> k
-    float mPercent -> l
-    android.graphics.RectF rectF -> m
-    android.graphics.PointF mPointF -> n
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
+    java.lang.String TAG -> f
+    android.graphics.Paint mPaint -> g
+    android.graphics.Paint mPaint2 -> h
+    android.graphics.Path mPath -> i
+    int mViewWidth -> b
+    int mViewHeight -> c
+    int mWidth -> d
+    int mHeight -> e
+    float r -> j
+    float rArc -> k
+    float x -> l
+    float mPercent -> m
+    android.graphics.RectF rectF -> n
+    android.graphics.PointF mPointF -> o
     void <init>(android.content.Context) -> <init>
     void <init>(android.content.Context,android.util.AttributeSet) -> <init>
     void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
@@ -21136,13 +21218,14 @@ com.android.tao.xcustomview.view.XBezierView -> com.android.tao.xcustomview.view
     void textCenter(java.lang.String[],android.graphics.Paint,android.graphics.Canvas,android.graphics.PointF,android.graphics.Paint$Align) -> a
     void <clinit>() -> <clinit>
 com.android.tao.xcustomview.view.XMaskView -> com.android.tao.xcustomview.view.XMaskView:
-    int mWidth -> a
-    int mHeight -> b
-    android.graphics.Bitmap mDstBitmap -> c
-    int mDstBmpWIdth -> d
-    int mDstBmpHeight -> e
-    android.graphics.Bitmap mMaskedBItmap -> f
-    android.graphics.Paint mPaint -> g
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
+    int mWidth -> b
+    int mHeight -> c
+    android.graphics.Bitmap mDstBitmap -> d
+    int mDstBmpWIdth -> e
+    int mDstBmpHeight -> f
+    android.graphics.Bitmap mMaskedBItmap -> g
+    android.graphics.Paint mPaint -> h
     void <init>(android.content.Context) -> <init>
     void <init>(android.content.Context,android.util.AttributeSet) -> <init>
     void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
@@ -21151,17 +21234,18 @@ com.android.tao.xcustomview.view.XMaskView -> com.android.tao.xcustomview.view.X
     void onDraw(android.graphics.Canvas) -> onDraw
     android.graphics.Bitmap createRectImage(android.graphics.Bitmap,int) -> a
 com.android.tao.xcustomview.view.XPlantLayout -> com.android.tao.xcustomview.view.XPlantLayout:
-    java.lang.String TAG -> c
-    android.content.Context mContext -> d
-    android.view.View mCurrFocusView -> e
-    int mPlantHoleWidth -> f
-    int mPlantHoleHeight -> g
-    int mPlantWidth -> h
-    int mPlantHeight -> i
-    android.graphics.Point mPointSource -> a
-    android.graphics.Point mPointDes -> b
-    java.util.ArrayList mPlantHoleList -> j
-    com.android.tao.xcustomview.bean.PlantHole mCurrDesRect -> k
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
+    java.lang.String TAG -> d
+    android.content.Context mContext -> e
+    android.view.View mCurrFocusView -> f
+    int mPlantHoleWidth -> g
+    int mPlantHoleHeight -> h
+    int mPlantWidth -> i
+    int mPlantHeight -> j
+    android.graphics.Point mPointSource -> b
+    android.graphics.Point mPointDes -> c
+    java.util.ArrayList mPlantHoleList -> k
+    com.android.tao.xcustomview.bean.PlantHole mCurrDesRect -> l
     void <init>(android.content.Context) -> <init>
     void <init>(android.content.Context,android.util.AttributeSet) -> <init>
     void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
@@ -21183,19 +21267,21 @@ com.android.tao.xcustomview.view.XPlantLayout -> com.android.tao.xcustomview.vie
     void access$300(com.android.tao.xcustomview.view.XPlantLayout,android.view.View) -> a
     void <clinit>() -> <clinit>
 com.android.tao.xcustomview.view.XPlantLayout$1 -> com.android.tao.xcustomview.view.XPlantLayout$1:
-    int mLastX -> b
-    int mLastY -> c
-    com.android.tao.xcustomview.view.XPlantLayout this$0 -> a
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
+    int mLastX -> c
+    int mLastY -> d
+    com.android.tao.xcustomview.view.XPlantLayout this$0 -> b
     void <init>(com.android.tao.xcustomview.view.XPlantLayout) -> <init>
     boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
 com.android.tao.xcustomview.view.XRoundRectButton -> com.android.tao.xcustomview.view.XRoundRectButton:
-    int mEnableColor -> a
-    int mDisableColor -> b
-    float mRadius -> c
-    android.view.View$OnClickListener mOnClickListener -> d
-    boolean mIsClickEnable -> e
-    long mDownTime -> f
-    long mLastClickEventTime -> g
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
+    int mEnableColor -> b
+    int mDisableColor -> c
+    float mRadius -> d
+    android.view.View$OnClickListener mOnClickListener -> e
+    boolean mIsClickEnable -> f
+    long mDownTime -> g
+    long mLastClickEventTime -> h
     void <init>(android.content.Context) -> <init>
     void <init>(android.content.Context,android.util.AttributeSet) -> <init>
     void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
@@ -21208,44 +21294,7 @@ com.android.tao.xcustomview.view.XRoundRectButton -> com.android.tao.xcustomview
     boolean onTouchEvent(android.view.MotionEvent) -> onTouchEvent
     void dealClickEvent() -> b
 com.android.tao.xcustomview.view.XRoundRectImageView -> com.android.tao.xcustomview.view.XRoundRectImageView:
-    android.content.Context mContext -> a
-    int mEnableColor -> b
-    int mDisableColor -> c
-    float mRadius -> d
-    android.view.View$OnClickListener mOnClickListener -> e
-    boolean mIsClickEnable -> f
-    long mDownTime -> g
-    int mBorderWidth -> h
-    int mBorderColor -> i
-    long mLastClickEventTime -> j
-    void <init>(android.content.Context) -> <init>
-    void <init>(android.content.Context,android.util.AttributeSet) -> <init>
-    void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
-    void init() -> a
-    void setBgColor(int,int) -> setBgColor
-    void setRadius(float) -> setRadius
-    boolean getClickEnabled() -> getClickEnabled
-    void setClickEnable(boolean) -> setClickEnable
-    void resetBg() -> b
-    void setBorder(int,int) -> setBorder
-    void setBorderColor(int) -> setBorderColor
-    void setBorderWidth(int) -> setBorderWidth
-    void setNormalBacground() -> c
-    void setFocusBacground() -> d
-    void setOnClickListener(android.view.View$OnClickListener) -> setOnClickListener
-    boolean onTouchEvent(android.view.MotionEvent) -> onTouchEvent
-    void dealClickEvent() -> e
-com.android.tao.xcustomview.view.XScrollerImageView -> com.android.tao.xcustomview.view.XScrollerImageView:
-    android.content.Context mContext -> a
-    int mLastX -> b
-    int mLastY -> c
-    void <init>(android.content.Context) -> <init>
-    void <init>(android.content.Context,android.util.AttributeSet) -> <init>
-    void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
-    boolean onTouchEvent(android.view.MotionEvent) -> onTouchEvent
-    void init() -> a
-com.android.tao.xcustomview.view.XStrokeRoundRectButton -> com.android.tao.xcustomview.view.XStrokeRoundRectButton:
-    java.lang.String TAG -> a
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
     android.content.Context mContext -> b
     int mEnableColor -> c
     int mDisableColor -> d
@@ -21268,6 +21317,46 @@ com.android.tao.xcustomview.view.XStrokeRoundRectButton -> com.android.tao.xcust
     void setBorder(int,int) -> setBorder
     void setBorderColor(int) -> setBorderColor
     void setBorderWidth(int) -> setBorderWidth
+    void setNormalBacground() -> c
+    void setFocusBacground() -> d
+    void setOnClickListener(android.view.View$OnClickListener) -> setOnClickListener
+    boolean onTouchEvent(android.view.MotionEvent) -> onTouchEvent
+    void dealClickEvent() -> e
+com.android.tao.xcustomview.view.XScrollerImageView -> com.android.tao.xcustomview.view.XScrollerImageView:
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
+    android.content.Context mContext -> b
+    int mLastX -> c
+    int mLastY -> d
+    void <init>(android.content.Context) -> <init>
+    void <init>(android.content.Context,android.util.AttributeSet) -> <init>
+    void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
+    boolean onTouchEvent(android.view.MotionEvent) -> onTouchEvent
+    void init() -> a
+com.android.tao.xcustomview.view.XStrokeRoundRectButton -> com.android.tao.xcustomview.view.XStrokeRoundRectButton:
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
+    java.lang.String TAG -> b
+    android.content.Context mContext -> c
+    int mEnableColor -> d
+    int mDisableColor -> e
+    float mRadius -> f
+    android.view.View$OnClickListener mOnClickListener -> g
+    boolean mIsClickEnable -> h
+    long mDownTime -> i
+    int mBorderWidth -> j
+    int mBorderColor -> k
+    long mLastClickEventTime -> l
+    void <init>(android.content.Context) -> <init>
+    void <init>(android.content.Context,android.util.AttributeSet) -> <init>
+    void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
+    void init() -> a
+    void setBgColor(int,int) -> setBgColor
+    void setRadius(float) -> setRadius
+    boolean getClickEnabled() -> getClickEnabled
+    void setClickEnable(boolean) -> setClickEnable
+    void resetBg() -> b
+    void setBorder(int,int) -> setBorder
+    void setBorderColor(int) -> setBorderColor
+    void setBorderWidth(int) -> setBorderWidth
     void setNormalBackground() -> c
     void setFocusBackground() -> d
     void setOnClickListener(android.view.View$OnClickListener) -> setOnClickListener
@@ -21275,8 +21364,9 @@ com.android.tao.xcustomview.view.XStrokeRoundRectButton -> com.android.tao.xcust
     void dealClickEvent() -> e
     void <clinit>() -> <clinit>
 com.android.tao.xcustomview.view.XSwipeRefreshLayout -> com.android.tao.xcustomview.view.XSwipeRefreshLayout:
-    java.lang.String TAG -> m
-    android.support.v7.widget.RecyclerView mRecyclerView -> n
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> m
+    java.lang.String TAG -> n
+    android.support.v7.widget.RecyclerView mRecyclerView -> o
     void <init>(android.content.Context) -> <init>
     void <init>(android.content.Context,android.util.AttributeSet) -> <init>
     void onLayout(boolean,int,int,int,int) -> onLayout
@@ -21285,8 +21375,9 @@ com.android.tao.xcustomview.view.XSwipeRefreshLayout -> com.android.tao.xcustomv
     java.lang.String access$000() -> c
     void <clinit>() -> <clinit>
 com.android.tao.xcustomview.view.XSwipeRefreshLayout$1 -> com.android.tao.xcustomview.view.XSwipeRefreshLayout$1:
-    android.support.v7.widget.LinearLayoutManager val$mLinearLayoutManager -> a
-    com.android.tao.xcustomview.view.XSwipeRefreshLayout this$0 -> b
+    com.meituan.robust.ChangeQuickRedirect changeQuickRedirect -> a
+    android.support.v7.widget.LinearLayoutManager val$mLinearLayoutManager -> b
+    com.android.tao.xcustomview.view.XSwipeRefreshLayout this$0 -> c
     void <init>(com.android.tao.xcustomview.view.XSwipeRefreshLayout,android.support.v7.widget.LinearLayoutManager) -> <init>
     void onScrollStateChanged(android.support.v7.widget.RecyclerView,int) -> a
     void onScrolled(android.support.v7.widget.RecyclerView,int,int) -> a

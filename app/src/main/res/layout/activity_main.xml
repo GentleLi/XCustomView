@@ -72,5 +72,15 @@
         android:gravity="center"
         android:text="BezierWaveViewActivity" />
 
+    <com.android.tao.xcustomview.view.XStrokeRoundRectButton
+        android:id="@+id/xbtn_hot_fix"
+        android:layout_width="@dimen/dp_150"
+        android:layout_height="@dimen/dp_30"
+        android:layout_below="@+id/xbtn_bezier_wave_view"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_20"
+        android:gravity="center"
+        android:text="HotFix" />
+
 
 </RelativeLayout>
