@@ -15,4 +15,7 @@
         <attr name="disableColor" format="color" />
         <attr name="clickEnable" format="boolean" />
     </declare-styleable>
+
+
+
 </resources>

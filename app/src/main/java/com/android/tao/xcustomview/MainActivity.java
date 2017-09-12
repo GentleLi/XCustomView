@@ -2,11 +2,12 @@ package com.android.tao.xcustomview;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.preference.DropDownPreference;
 import android.util.Log;
 import android.view.View;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.android.tao.xcustomview.impl.PatchManipulateImp;
@@ -16,7 +17,6 @@ import com.android.tao.xcustomview.ui.BezierWaveActivity;
 import com.android.tao.xcustomview.ui.RefreshActivity;
 import com.android.tao.xcustomview.ui.TestViewActivity;
 import com.android.tao.xcustomview.ui.ViewDragActivity;
-import com.android.tao.xcustomview.ui.ViewPlantActivity;
 import com.android.tao.xcustomview.utils.FileUtils;
 import com.android.tao.xcustomview.view.XStrokeRoundRectButton;
 import com.meituan.robust.Patch;
@@ -64,6 +64,9 @@ public class MainActivity extends AppCompatActivity {
     private void initData() {//创建一个文件
         File file=new File(Storage.HOT_FIX_DIR+"test.txt");
         FileUtils.writeFileFromString(file,"gagaggaga",true);
+
+
+
     }
 
     /**
@@ -71,6 +74,14 @@ public class MainActivity extends AppCompatActivity {
      */
     private void initView() {
         setRoundRectButton();
+
+        DropDownPreference preference=new DropDownPreference(this);
+//        preference.
+        preference.getDialogLayoutResource();
+
+        Spinner spinner=new Spinner(this);
+        spinner.setDropDownHorizontalOffset(500);
+
     }
 
     private void setRoundRectButton() {

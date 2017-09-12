@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 //制作补丁时将这个打开，auto-patch-plugin紧跟着com.android.application
-apply plugin: 'auto-patch-plugin'
+//apply plugin: 'auto-patch-plugin'
 apply plugin: 'robust'
 
 def releaseTime() {
@@ -93,5 +93,7 @@ dependencies {
     compile 'com.android.support:support-v4:25.3.0'
     compile 'com.android.support:design:25.3.0'
     compile 'com.android.support:appcompat-v7:25.3.0'
+    compile 'com.android.support:recyclerview-v7:25.3.0'
     compile 'com.meituan.robust:robust:0.4.5'
+    compile 'com.android.support:preference-v7:25.3.0'
 }

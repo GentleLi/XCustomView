@@ -1,9 +1,11 @@
 package com.android.tao.xcustomview.utils;
 
+import android.content.Context;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 
 /**
  * <pre>
@@ -174,5 +176,25 @@ public class SizeUtils {
      */
     public static int getMeasuredHeight(View view) {
         return measureView(view)[1];
+    }
+
+
+    public static DisplayMetrics getDisplayMetrics(Context context) {
+        DisplayMetrics displaymetrics = new DisplayMetrics();
+        ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE))
+                .getDefaultDisplay()
+                .getMetrics(displaymetrics);
+        int screenWidth=displaymetrics.widthPixels;
+        int screenHeight=displaymetrics.heightPixels;
+        return displaymetrics;
+    }
+
+    public static int getScreenWidth(Context context) {
+        DisplayMetrics displaymetrics = new DisplayMetrics();
+        ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE))
+                .getDefaultDisplay()
+                .getMetrics(displaymetrics);
+//        int screenWidth=displaymetrics.widthPixels;
+        return displaymetrics.widthPixels;
     }
 }

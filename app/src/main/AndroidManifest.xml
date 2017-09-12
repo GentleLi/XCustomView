@@ -42,6 +42,10 @@
         <activity
             android:name=".ui.BezierWaveActivity"
             android:label="BezierWaveActivity" />
+
+        <activity android:name=".ui.SettingActivity"
+            android:configChanges="orientation|screenSize">
+        </activity>
     </application>
 
 </manifest>

@@ -6,11 +6,16 @@
     android:layout_height="match_parent"
     tools:context="com.android.tao.xcustomview.MainActivity">
 
-    <com.android.tao.xcustomview.view.DragView
-        android:id="@+id/dv_one"
-        android:layout_width="@dimen/dp_100"
-        android:layout_height="@dimen/dp_100"
-        android:layout_centerInParent="true"
-        android:background="@color/colorAccent" />
+    <!--<com.android.tao.xcustomview.view.DragView-->
+        <!--android:id="@+id/dv_one"-->
+        <!--android:layout_width="@dimen/dp_100"-->
+        <!--android:layout_height="@dimen/dp_100"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:background="@color/colorAccent" />-->
+
+
+    <com.android.tao.xcustomview.view.PathView
+        android:layout_width="@dimen/dp_500"
+        android:layout_height="@dimen/dp_500" />
 
 </RelativeLayout>
